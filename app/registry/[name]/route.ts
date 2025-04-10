@@ -1,13 +1,10 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import { promises as fs } from "fs";
+import path from "node:path";
+import { promises as fs } from "node:fs";
 import { registryItemSchema } from "shadcn/registry";
 
 // This route shows an example for serving a component using a route handler.
-export async function GET(
-	request: Request,
-	{ params }: { params: Promise<{ name: string }> }
-) {
+export async function GET({ params }: { params: Promise<{ name: string }> }) {
 	try {
 		const { name } = await params;
 		// Cache the registry import
@@ -48,6 +45,7 @@ export async function GET(
 		// Return the component with the files.
 		return NextResponse.json({ ...registryItem, files: filesWithContent });
 	} catch (error) {
+		// biome-ignore lint/suspicious/noConsole: <explanation>
 		console.error("Error processing component request:", error);
 		return NextResponse.json(
 			{ error: "Something went wrong" },
