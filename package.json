@@ -1,43 +1,43 @@
 {
-	"name": "registry-template",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "next start",
-		"lint": "biome lint",
-		"format": "biome format ./ --write",
-		"prepare": "husky",
-		"registry:build": "shadcn build"
-	},
-	"dependencies": {
-		"@radix-ui/react-label": "^2.1.1",
-		"@radix-ui/react-slot": "^1.1.1",
-		"@tanstack/react-query": "^5.64.1",
-		"class-variance-authority": "^0.7.1",
-		"clsx": "^2.1.1",
-		"lucide-react": "^0.471.1",
-		"next": "15.1.4",
-		"next-themes": "^0.4.4",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"shadcn": "2.4.0-canary.12",
-		"tailwind-merge": "^2.6.0",
-		"tailwindcss-animate": "^1.0.7",
-		"zod": "^3.24.1"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@commitlint/cli": "^19.8.0",
-		"@commitlint/config-conventional": "^19.8.0",
-		"@types/node": "^20",
-		"@types/react": "^19",
-		"@types/react-dom": "^19",
-		"husky": "^9.1.7",
-		"postcss": "^8",
-		"tailwindcss": "^3.4.1",
-		"typescript": "^5",
-		"ultracite": "^4.2.1"
-	}
+  "name": "registry-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome lint",
+    "format": "biome format ./ --write",
+    "prepare": "husky",
+    "registry:build": "shadcn build"
+  },
+  "dependencies": {
+    "@radix-ui/react-label": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@tanstack/react-query": "^5.64.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.471.1",
+    "next": "15.1.4",
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "shadcn": "2.4.0-canary.12",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "husky": "^9.1.7",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5",
+    "ultracite": "^4.2.1"
+  }
 }
