@@ -1,4 +1,5 @@
 import { OpenInV0Button } from "@/components/open-in-v0-button";
+import { DiscordMessages } from "@/registry/new-york/discord-base";
 
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
@@ -16,7 +17,7 @@ export default function Home() {
 				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
-							A simple hello world component
+							Example of basic discord messages
 						</h2>
 						<OpenInV0Button
 							name="hello-world"
@@ -24,7 +25,9 @@ export default function Home() {
 						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
-						{/* <HelloWorld /> */}
+						<DiscordMessages>
+							<p>Hello World</p>
+						</DiscordMessages>
 					</div>
 				</div>
 			</main>
