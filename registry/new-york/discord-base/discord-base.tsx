@@ -120,7 +120,7 @@ function DiscordMessageAuthorName({
 		<div className="flex flex-wrap items-center sm:flex-nowrap">
 			<p
 				data-slot="discord-message-author-name"
-				className={cn("font-medium text-[1rem] mr-1", className)}
+				className={cn("mr-1 font-medium text-[1rem]", className)}
 				{...props}
 			>
 				{children}
