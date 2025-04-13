@@ -1,5 +1,13 @@
 import { OpenInV0Button } from "@/components/open-in-v0-button";
-import { DiscordChat } from "@/registry/new-york/discord-base";
+import {
+	DiscordChat,
+	DiscordMessage,
+	DiscordMessageAuthor,
+	DiscordMessageAuthorImage,
+	DiscordMessageAuthorName,
+	DiscordMessageContent,
+	DiscordMessageGroup
+} from "@/registry/new-york/discord-base/discord-base";
 
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
@@ -19,11 +27,74 @@ export default function Home() {
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
 							Example of basic discord messages
 						</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
-							<p>Hello World</p>
+							<DiscordMessageGroup>
+								<DiscordMessageContent>
+									<DiscordMessageAuthor>
+										<DiscordMessageAuthorImage
+											src="/globe.svg"
+											alt="Avatar"
+											fallback="WF"
+										/>
+										<DiscordMessageAuthorName
+											timestamp={new Date(Date.now() - 48 * 60 * 60 * 1000)}
+										>
+											Woofer21
+										</DiscordMessageAuthorName>
+									</DiscordMessageAuthor>
+									<DiscordMessage>Hello World</DiscordMessage>
+								</DiscordMessageContent>
+
+								<DiscordMessageContent>
+									<DiscordMessage>What is up chat?</DiscordMessage>
+								</DiscordMessageContent>
+							</DiscordMessageGroup>
+
+							<DiscordMessageGroup>
+								<DiscordMessageContent>
+									<DiscordMessageAuthor>
+										<DiscordMessageAuthorImage
+											src="/globe.svg"
+											alt="Avatar"
+											fallback="DOM"
+										/>
+										<DiscordMessageAuthorName timestamp={new Date()}>
+											Dominik
+										</DiscordMessageAuthorName>
+									</DiscordMessageAuthor>
+									<DiscordMessage>Hi Woofer</DiscordMessage>
+								</DiscordMessageContent>
+							</DiscordMessageGroup>
+
+							<DiscordMessageGroup>
+								<DiscordMessageContent>
+									<DiscordMessageAuthor>
+										<DiscordMessageAuthorImage
+											src="/globe.svg"
+											alt="Avatar"
+											fallback="WF"
+										/>
+										<DiscordMessageAuthorName
+											timestamp={new Date(Date.now() - 48 * 60 * 60 * 1000)}
+										>
+											Woofer21
+										</DiscordMessageAuthorName>
+									</DiscordMessageAuthor>
+									<DiscordMessage>
+										I am going to send a really long message to see how it
+										looks? Are you ready? I am sure it is going to break so be
+										ready for the really long message to break everything, we
+										love breaning things here don't we? isint it just the
+										grandest time?
+									</DiscordMessage>
+								</DiscordMessageContent>
+							</DiscordMessageGroup>
 						</DiscordChat>
 					</div>
 				</div>
@@ -31,4 +102,3 @@ export default function Home() {
 		</div>
 	);
 }
-
