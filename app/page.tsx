@@ -17,7 +17,7 @@ export default function Home() {
 					Discord Components
 				</h1>
 				<p className="text-muted-foreground">
-					A collection of discord components for integrating discord like UI
+					A collection of discord components for integrating discord UIs
 					into your project.
 				</p>
 			</header>
