@@ -117,10 +117,10 @@ function DiscordMessageAuthorName({
 	...props
 }: React.ComponentProps<"p"> & { timestamp: Date; hr24?: boolean }) {
 	return (
-		<div className="flex items-center gap-2">
+		<div className="flex flex-wrap items-center sm:flex-nowrap">
 			<p
 				data-slot="discord-message-author-name"
-				className={cn("font-medium text-[1rem]", className)}
+				className={cn("font-medium text-[1rem] mr-1", className)}
 				{...props}
 			>
 				{children}
