@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: "Discord Components",
-	description: "A collection of discord components for integrating discord UIs into your project."
+	description:
+		"A collection of discord components for integrating discord UIs into your project."
 };
 
 export default function RootLayout({
@@ -28,6 +29,11 @@ export default function RootLayout({
 			lang="en"
 			className="dark"
 		>
+			<script
+				defer
+				data-domain="ui.wouldyoubot.gg"
+				src="https://stats.rivo.gg/js/script.js"
+			/>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>

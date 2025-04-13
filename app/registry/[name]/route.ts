@@ -4,7 +4,10 @@ import { promises as fs } from "node:fs";
 import { registryItemSchema } from "shadcn/registry";
 
 // This route shows an example for serving a component using a route handler.
-export async function GET(_req: NextRequest, { params }: { params: Promise<{ name: string }> }) {
+export async function GET(
+	_req: NextRequest,
+	{ params }: { params: Promise<{ name: string }> }
+) {
 	try {
 		const { name } = await params;
 		// Cache the registry import
