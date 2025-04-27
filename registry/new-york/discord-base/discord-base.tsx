@@ -6,20 +6,23 @@ import type * as React from "react";
 import { formatDate } from "./lib/utils";
 import Icons from "./discord-icons";
 
-const chatVariants = cva("flex flex-col rounded-md bg-discord-background py-4", {
-	variants: {
-		theme: {
-			light: "discord-light",
-			classic: "discord-classic",
-			ash: "discord-ash",
-			dark: "discord-dark",
-			onyx: "discord-onyx",
+const chatVariants = cva(
+	"flex flex-col rounded-md bg-discord-background py-4",
+	{
+		variants: {
+			theme: {
+				light: "discord-light",
+				classic: "discord-classic",
+				ash: "discord-ash",
+				dark: "discord-dark",
+				onyx: "discord-onyx"
+			}
 		},
-	},
-	defaultVariants: {
-		theme: "ash",
-	},
-});
+		defaultVariants: {
+			theme: "ash"
+		}
+	}
+);
 
 function DiscordChat({
 	theme,
@@ -28,13 +31,21 @@ function DiscordChat({
 	...props
 }: React.ComponentProps<"div"> & VariantProps<typeof chatVariants>) {
 	return (
-		<div data-slot="discord-messages" className={cn(chatVariants({ theme, className }))} {...props}>
+		<div
+			data-slot="discord-messages"
+			className={cn(chatVariants({ theme, className }))}
+			{...props}
+		>
 			{children}
 		</div>
 	);
 }
 
-function DiscordMessageGroup({ className, children, ...props }: React.ComponentProps<"div">) {
+function DiscordMessageGroup({
+	className,
+	children,
+	...props
+}: React.ComponentProps<"div">) {
 	return (
 		<div
 			data-slot="discord-message-group"
@@ -46,7 +57,11 @@ function DiscordMessageGroup({ className, children, ...props }: React.ComponentP
 	);
 }
 
-function DiscordMessageContent({ className, children, ...props }: React.ComponentProps<"div">) {
+function DiscordMessageContent({
+	className,
+	children,
+	...props
+}: React.ComponentProps<"div">) {
 	return (
 		<div
 			data-slot="discord-message-content"
@@ -58,7 +73,10 @@ function DiscordMessageContent({ className, children, ...props }: React.Componen
 	);
 }
 
-function DiscordMessageAuthor({ children, ...props }: React.ComponentProps<"div">) {
+function DiscordMessageAuthor({
+	children,
+	...props
+}: React.ComponentProps<"div">) {
 	return <div {...props}>{children}</div>;
 }
 
@@ -74,14 +92,20 @@ function DiscordMessageAuthorImage({
 	fallback: string;
 }) {
 	return (
-		<Avatar data-slot="discord-message-author" className="absolute top-1 left-2 size-10" {...props}>
+		<Avatar
+			data-slot="discord-message-author"
+			className="absolute top-1 left-2 size-10"
+			{...props}
+		>
 			<AvatarImage
 				data-slot="discord-message-author-image"
 				className={cn("rounded-full", className)}
 				src={src}
 				alt={alt}
 			/>
-			<AvatarFallback data-slot="discord-message-author-fallback">{fallback}</AvatarFallback>
+			<AvatarFallback data-slot="discord-message-author-fallback">
+				{fallback}
+			</AvatarFallback>
 		</Avatar>
 	);
 }
@@ -102,16 +126,27 @@ function DiscordMessageAuthorName({
 			>
 				{children}
 			</p>
-			<p data-slot="discord-message-timestamp" className="text-[0.75rem] text-muted-foreground">
+			<p
+				data-slot="discord-message-timestamp"
+				className="text-[0.75rem] text-muted-foreground"
+			>
 				{formatDate(timestamp, hr24)}
 			</p>
 		</div>
 	);
 }
 
-function DiscordMessage({ className, children, ...props }: React.ComponentProps<"div">) {
+function DiscordMessage({
+	className,
+	children,
+	...props
+}: React.ComponentProps<"div">) {
 	return (
-		<div data-slot="discord-message" className={cn("text-sm", className)} {...props}>
+		<div
+			data-slot="discord-message"
+			className={cn("text-sm", className)}
+			{...props}
+		>
 			{children}
 		</div>
 	);
@@ -259,14 +294,14 @@ function DiscordMention({
 		<span
 			data-slot="discord-mention"
 			className={cn(
-				"my-[2px] inline-block rounded-[3px] bg-discord-mention px-[2px] align-baseline font-medium text-discord-mention-foreground hover:bg-discord-mention-hover hover:text-discord-mention-foreground-hover",
+				"my-[2px] inline-block cursor-pointer rounded-[3px] bg-discord-mention px-[2px] align-baseline font-medium text-discord-mention-foreground hover:bg-discord-mention-hover hover:text-discord-mention-foreground-hover",
 				roleColor && "discord-mention",
 				className
 			)}
 			style={
 				{
 					"--role-color": roleColor ? roleColor : undefined,
-					color: roleColor ? roleColor : undefined,
+					color: roleColor ? roleColor : undefined
 				} as React.CSSProperties
 			}
 			{...props}
@@ -321,7 +356,10 @@ function DiscordMention({
 			{type === "external-server-link" && (
 				<>
 					<Avatar className="mr-[3px] mb-[.2rem] inline-block size-[1em] bg-discord-background align-middle">
-						<AvatarImage src={serverSrc} alt={serverAlt} />
+						<AvatarImage
+							src={serverSrc}
+							alt={serverAlt}
+						/>
 						<AvatarFallback>{serverFallback}</AvatarFallback>
 					</Avatar>
 					{modifierText} <Icons.DiscordArrowRightIcon />
@@ -350,6 +388,5 @@ export {
 	DiscordMessageAuthorImage,
 	DiscordMessageAuthorName,
 	DiscordMessage,
-	DiscordMention,
+	DiscordMention
 };
-
