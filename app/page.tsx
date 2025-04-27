@@ -7,16 +7,19 @@ import {
 	DiscordMessageAuthorImage,
 	DiscordMessageAuthorName,
 	DiscordMessageContent,
-	DiscordMessageGroup,
+	DiscordMessageGroup
 } from "@/registry/new-york/discord-base/discord-base";
 
 export default function Home() {
 	return (
 		<div className="mx-auto flex min-h-svh max-w-3xl flex-col gap-8 px-4 py-8">
 			<header className="flex flex-col gap-1">
-				<h1 className="font-bold text-3xl tracking-tight">Discord Components</h1>
+				<h1 className="font-bold text-3xl tracking-tight">
+					Discord Components
+				</h1>
 				<p className="text-muted-foreground">
-					A collection of discord components for integrating discord UIs into your project.
+					A collection of discord components for integrating discord UIs into
+					your project.
 				</p>
 			</header>
 			<main className="flex flex-1 flex-col gap-8">
@@ -25,7 +28,10 @@ export default function Home() {
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
 							Example of basic discord messages
 						</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
@@ -82,10 +88,11 @@ export default function Home() {
 										</DiscordMessageAuthorName>
 									</DiscordMessageAuthor>
 									<DiscordMessage>
-										I am going to send a really long message to see how it looks? Are you ready? I
-										am sure it is going to break so be ready for the really long message to break
-										everything, we love breaning things here don't we? isint it just the grandest
-										time?
+										I am going to send a really long message to see how it
+										looks? Are you ready? I am sure it is going to break so be
+										ready for the really long message to break everything, we
+										love breaning things here don't we? isint it just the
+										grandest time?
 									</DiscordMessage>
 								</DiscordMessageContent>
 							</DiscordMessageGroup>
@@ -95,8 +102,13 @@ export default function Home() {
 
 				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
-						<h2 className="text-muted-foreground text-sm sm:pl-3">Simple Mentions</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<h2 className="text-muted-foreground text-sm sm:pl-3">
+							Simple Mentions
+						</h2>
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
@@ -115,45 +127,60 @@ export default function Home() {
 										</DiscordMessageAuthorName>
 									</DiscordMessageAuthor>
 									<DiscordMessage>
-										Yo <DiscordMention type="user">Woofer21</DiscordMention> what is good brother?
+										Yo <DiscordMention type="user">Woofer21</DiscordMention>{" "}
+										what is good brother?
 										<br />
 										<DiscordMention type="role">Admin</DiscordMention> help!!!!
 										<br />
-										<DiscordMention type="role" roleColor="#C759FF">
+										<DiscordMention
+											type="role"
+											roleColor="#C759FF"
+										>
 											Owner
 										</DiscordMention>{" "}
 										whats up bro
 										<br />
-										Bro literally <DiscordMention type="channel">general</DiscordMention> is my fav
-										channel!!
+										Bro literally{" "}
+										<DiscordMention type="channel">general</DiscordMention> is
+										my fav channel!!
 										<br />
-										Have you seen the <DiscordMention type="thread">cool-cars</DiscordMention>{" "}
+										Have you seen the{" "}
+										<DiscordMention type="thread">cool-cars</DiscordMention>{" "}
 										thread yet?
 										<br />
-										Join up <DiscordMention type="voice">gaming</DiscordMention> for some gaming!!
+										Join up <DiscordMention type="voice">gaming</DiscordMention>{" "}
+										for some gaming!!
 										<br />
-										<DiscordMention type="stage">Events</DiscordMention> is the best stage ever!
+										<DiscordMention type="stage">Events</DiscordMention> is the
+										best stage ever!
 										<br />
 										Please only post help questions in{" "}
 										<DiscordMention type="forum">help</DiscordMention>!!
 										<br />
-										So much cool media in <DiscordMention type="media">media</DiscordMention>!
+										So much cool media in{" "}
+										<DiscordMention type="media">media</DiscordMention>!
 										<br />
 										Slash commands are cool, try{" "}
 										<DiscordMention type="command">ping</DiscordMention>
 										<br />
-										Make sure to pick up your roles from <DiscordMention type="linked-roles" />
+										Make sure to pick up your roles from{" "}
+										<DiscordMention type="linked-roles" />
 										<br />
-										Choose which channels you can see in the <DiscordMention type="browse" /> tab
+										Choose which channels you can see in the{" "}
+										<DiscordMention type="browse" /> tab
 										<br />
-										Learn more about our server in the <DiscordMention type="guide" /> tab
+										Learn more about our server in the{" "}
+										<DiscordMention type="guide" /> tab
 										<br />
-										Too bad that you disabled embed links, now this cool image wont display :{"( "}
+										Too bad that you disabled embed links, now this cool image
+										wont display :{"( "}
 										<DiscordMention type="image-link">image.jpg</DiscordMention>
 										<br />
 										Make sure to check out more information in this{" "}
-										<DiscordMention type="forum-post">Channel Information</DiscordMention> forum
-										post
+										<DiscordMention type="forum-post">
+											Channel Information
+										</DiscordMention>{" "}
+										forum post
 									</DiscordMessage>
 								</DiscordMessageContent>
 							</DiscordMessageGroup>
@@ -166,7 +193,10 @@ export default function Home() {
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
 							In-Server Message Link Mentions
 						</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
@@ -186,7 +216,11 @@ export default function Home() {
 									</DiscordMessageAuthor>
 									<DiscordMessage>
 										Yo, check out this cool message{" "}
-										<DiscordMention type="message-link" modifier="channel" modifierText="general" />
+										<DiscordMention
+											type="message-link"
+											modifier="channel"
+											modifierText="general"
+										/>
 										<br />
 										Go rate my new car here{" "}
 										<DiscordMention
@@ -197,7 +231,12 @@ export default function Home() {
 										please :{")"}
 										<br />
 										Can you please help me with this issue{" "}
-										<DiscordMention type="message-link" modifier="forum" modifierText="help" /> ?
+										<DiscordMention
+											type="message-link"
+											modifier="forum"
+											modifierText="help"
+										/>{" "}
+										?
 										<br />
 										Check out my new PC background{" "}
 										<DiscordMention
@@ -207,10 +246,17 @@ export default function Home() {
 										/>
 										<br />
 										Did you see what bob wanted to tell you in the VC yesterday?{" "}
-										<DiscordMention type="message-link" modifier="voice" modifierText="chit-chat" />
+										<DiscordMention
+											type="message-link"
+											modifier="voice"
+											modifierText="chit-chat"
+										/>
 										<br />
 										Look at this new decoration, should I buy it?{" "}
-										<DiscordMention type="shop-link" modifierText="Aurora" />
+										<DiscordMention
+											type="shop-link"
+											modifierText="Aurora"
+										/>
 									</DiscordMessage>
 								</DiscordMessageContent>
 							</DiscordMessageGroup>
@@ -223,7 +269,10 @@ export default function Home() {
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
 							External Server Message Link Mentions
 						</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
@@ -381,4 +430,3 @@ export default function Home() {
 		</div>
 	);
 }
-
