@@ -405,7 +405,7 @@ export default function Home() {
 							rel="noreferrer"
 						>
 							<span>Woofer21</span>
-						</a>
+						</a>{" "}
 						and{" "}
 						<a
 							className="text-white/80 hover:underline"
@@ -415,6 +415,7 @@ export default function Home() {
 						>
 							Contributors
 						</a>
+						!
 					</p>
 					<a
 						className="text-white/80 hover:underline"
