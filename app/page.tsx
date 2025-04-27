@@ -90,9 +90,8 @@ export default function Home() {
 									<DiscordMessage>
 										I am going to send a really long message to see how it
 										looks? Are you ready? I am sure it is going to break so be
-										ready for the really long message to break everything, we
-										love breaning things here don't we? isint it just the
-										grandest time?
+										ready for the really long message to breaking things here
+										don't we? Is it not just the grandest time?
 									</DiscordMessage>
 								</DiscordMessageContent>
 							</DiscordMessageGroup>
