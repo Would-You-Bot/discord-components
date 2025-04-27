@@ -1,9 +1,13 @@
 import { cn } from "@/lib/utils";
 import type React from "react";
 
-const ICON_CLASS = "fill-discord-mention-foreground size-[1em] mr-1 mb-[.1rem] inline";
+const ICON_CLASS =
+	"fill-discord-mention-foreground size-[1em] mr-1 mb-[.1rem] inline";
 
-function DiscordChannelIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordChannelIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Channel"
@@ -21,13 +25,16 @@ function DiscordChannelIcon({ className, ...props }: React.SVGProps<SVGSVGElemen
 				fill="currentColor"
 				fillRule="evenodd"
 				d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"
-				clip-rule="evenodd"
+				clipRule="evenodd"
 			/>
 		</svg>
 	);
 }
 
-function DiscordVoiceIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordVoiceIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Voice Channel"
@@ -53,7 +60,10 @@ function DiscordVoiceIcon({ className, ...props }: React.SVGProps<SVGSVGElement>
 	);
 }
 
-function DiscordStageIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordStageIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Stage Channel"
@@ -83,7 +93,10 @@ function DiscordStageIcon({ className, ...props }: React.SVGProps<SVGSVGElement>
 	);
 }
 
-function DiscordThreadIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordThreadIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Thread"
@@ -105,7 +118,10 @@ function DiscordThreadIcon({ className, ...props }: React.SVGProps<SVGSVGElement
 	);
 }
 
-function DiscordForumIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordForumIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Forum Channel"
@@ -131,7 +147,10 @@ function DiscordForumIcon({ className, ...props }: React.SVGProps<SVGSVGElement>
 	);
 }
 
-function DiscordMediaIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordMediaIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Media Channel"
@@ -155,7 +174,10 @@ function DiscordMediaIcon({ className, ...props }: React.SVGProps<SVGSVGElement>
 	);
 }
 
-function DiscordLinkedRolesIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordLinkedRolesIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Linked Roles"
@@ -173,12 +195,18 @@ function DiscordLinkedRolesIcon({ className, ...props }: React.SVGProps<SVGSVGEl
 				fill="currentColor"
 				d="M16.32 14.72a1 1 0 0 1 0-1.41l2.51-2.51a3.98 3.98 0 0 0-5.62-5.63l-2.52 2.51a1 1 0 0 1-1.41-1.41l2.52-2.52a5.98 5.98 0 0 1 8.45 8.46l-2.52 2.51a1 1 0 0 1-1.41 0ZM7.68 9.29a1 1 0 0 1 0 1.41l-2.52 2.51a3.98 3.98 0 1 0 5.63 5.63l2.51-2.52a1 1 0 0 1 1.42 1.42l-2.52 2.51a5.98 5.98 0 0 1-8.45-8.45l2.51-2.51a1 1 0 0 1 1.42 0Z"
 			/>
-			<path fill="currentColor" d="M14.7 10.7a1 1 0 0 0-1.4-1.4l-4 4a1 1 0 1 0 1.4 1.4l4-4Z" />
+			<path
+				fill="currentColor"
+				d="M14.7 10.7a1 1 0 0 0-1.4-1.4l-4 4a1 1 0 1 0 1.4 1.4l4-4Z"
+			/>
 		</svg>
 	);
 }
 
-function DiscordBrowseIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordBrowseIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Browse Channels"
@@ -206,7 +234,10 @@ function DiscordBrowseIcon({ className, ...props }: React.SVGProps<SVGSVGElement
 	);
 }
 
-function DiscordGuideIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordGuideIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Server Guide"
@@ -228,7 +259,10 @@ function DiscordGuideIcon({ className, ...props }: React.SVGProps<SVGSVGElement>
 	);
 }
 
-function DiscordImageLinkIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordImageLinkIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-hidden="true"
@@ -249,7 +283,10 @@ function DiscordImageLinkIcon({ className, ...props }: React.SVGProps<SVGSVGElem
 	);
 }
 
-function DiscordMessageBubbleIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordMessageBubbleIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Forum Post"
@@ -271,7 +308,10 @@ function DiscordMessageBubbleIcon({ className, ...props }: React.SVGProps<SVGSVG
 	);
 }
 
-function DiscordArrowRightIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordArrowRightIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-hidden="true"
@@ -292,7 +332,10 @@ function DiscordArrowRightIcon({ className, ...props }: React.SVGProps<SVGSVGEle
 	);
 }
 
-function DiscordShopIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordShopIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-hidden="true"
@@ -317,7 +360,10 @@ function DiscordShopIcon({ className, ...props }: React.SVGProps<SVGSVGElement>)
 	);
 }
 
-function DiscordLockedIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+function DiscordLockedIcon({
+	className,
+	...props
+}: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			aria-label="Stage Channel (Locked)"
@@ -355,7 +401,7 @@ export {
 	DiscordMessageBubbleIcon,
 	DiscordArrowRightIcon,
 	DiscordShopIcon,
-	DiscordLockedIcon,
+	DiscordLockedIcon
 };
 export default {
 	DiscordChannelIcon,
@@ -371,6 +417,5 @@ export default {
 	DiscordMessageBubbleIcon,
 	DiscordArrowRightIcon,
 	DiscordShopIcon,
-	DiscordLockedIcon,
+	DiscordLockedIcon
 };
-
