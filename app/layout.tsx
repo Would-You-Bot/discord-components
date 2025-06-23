@@ -30,9 +30,14 @@ export default function RootLayout({
 			className="dark"
 		>
 			<script
-				defer
-				data-domain="ui.wouldyoubot.gg"
-				src="https://stats.rivo.gg/js/script.js"
+				src="https://app.databuddy.cc/databuddy.js"
+				data-client-id="L0XUtcivbZecupTbFpPVn"
+				data-track-hash-changes="true"
+				data-track-web-vitals="true"
+				data-track-errors="true"
+				data-enable-batching="true"
+				crossOrigin="anonymous"
+				async
 			/>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
