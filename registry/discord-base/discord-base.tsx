@@ -1,9 +1,8 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
-import { AvatarImage } from "@radix-ui/react-avatar";
 import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
-import { formatDate } from "./lib/utils";
+import { formatDate } from "./lib/date-fns";
 import Icons from "./discord-icons";
 
 const chatVariants = cva(

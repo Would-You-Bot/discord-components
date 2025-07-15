@@ -4,61 +4,64 @@
   "homepage": "https://acme.com",
   "items": [
     {
-      "name": "hello-world",
+      "name": "discord-base",
       "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "title": "Discord Base",
+      "description": "The base components for all Discord components",
+      "registryDependencies": ["avatar"],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
-          "path": "registry/new-york/hello-world/hello-world.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "example-form",
-      "type": "registry:component",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
-      "files": [
-        {
-          "path": "registry/new-york/example-form/example-form.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "complex-component",
-      "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
-      "files": [
-        {
-          "path": "registry/new-york/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
-        {
-          "path": "registry/new-york/complex-component/components/pokemon-card.tsx",
+          "path": "registry/discord-base/discord-base.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/complex-component/components/pokemon-image.tsx",
+          "path": "registry/discord-base/discord-icons.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/complex-component/lib/pokemon.ts",
+          "path": "registry/discord-base/lib/date-fns.ts",
           "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
         }
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "discord-background": "oklch(0.32 0.0107 278.25)",
+          "discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
+          "discord-mention-foreground": "oklch(0.88 0.0574 270.02)",
+          "discord-mention-hover": "oklch(0.58 0.2093 273.55)",
+          "discord-mention-foreground-hover": "oklch(1 0 0)"
+        }
+      },
+      "css": {
+        "@layer base": {
+          ".discord-light": {
+            "--discord-background": "oklch(0.99 0 0)",
+            "--discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
+            "--discord-mention-foreground": "oklch(0.88 0.0574 270.02)"
+          },
+          ".discord-classic": {
+            "--discord-background": "oklch(0.145 0 0)",
+            "--discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
+            "--discord-mention-foreground": "oklch(0.88 0.0574 270.02)"
+          },
+          ".discord-ash": {
+            "--discord-background": "oklch(0.32 0.0107 278.25)",
+            "--discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
+            "--discord-mention-foreground": "oklch(0.88 0.0574 270.02)"
+          },
+          ".discord-dark": {
+            "--discord-background": "oklch(0.22 0.0077 285.74)",
+            "--discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
+            "--discord-mention-foreground": "oklch(0.8 0.0969 270.5)"
+          },
+          ".discord-onyx": {
+            "--discord-background": "oklch(0.13 0.005 285.67)",
+            "--discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
+            "--discord-mention-foreground": "oklch(0.39 0.1288 271.41)"
+          }
+        }
+      }
     }
   ]
 }
