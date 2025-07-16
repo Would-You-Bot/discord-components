@@ -9,23 +9,23 @@ export function OpenInV0Button({
 	return (
 		<Button
 			aria-label="Open in v0"
+			asChild
 			className={cn(
 				"h-7 gap-1 rounded-lg bg-black px-3 text-white text-xs shadow-none hover:bg-black hover:text-white dark:bg-white dark:text-black",
 				className
 			)}
-			asChild
 		>
 			<a
 				href={`https://v0.dev/chat/api/open?url=${process.env.NEXT_PUBLIC_BASE_URL}/r/${name}.json`}
-				target="_blank"
 				rel="noreferrer"
+				target="_blank"
 			>
 				Open in{" "}
 				<svg
-					viewBox="0 0 40 20"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
 					className="h-5 w-5 text-current"
+					fill="none"
+					viewBox="0 0 40 20"
+					xmlns="http://www.w3.org/2000/svg"
 				>
 					<title>V0</title>
 					<path

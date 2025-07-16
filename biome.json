@@ -35,7 +35,9 @@
         "useBlockStatements": "info",
         "noEnum": "off"
       },
-      "nursery": {}
+      "nursery": {
+        "noUnknownAtRule": "off"
+      }
     }
   },
   "formatter": {

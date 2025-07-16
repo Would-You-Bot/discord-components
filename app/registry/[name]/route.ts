@@ -1,6 +1,6 @@
-import { type NextRequest, NextResponse } from "next/server";
-import path from "node:path";
 import { promises as fs } from "node:fs";
+import path from "node:path";
+import { type NextRequest, NextResponse } from "next/server";
 import { registryItemSchema } from "shadcn/registry";
 
 // This route shows an example for serving a component using a route handler.
@@ -48,7 +48,7 @@ export async function GET(
 		// Return the component with the files.
 		return NextResponse.json({ ...registryItem, files: filesWithContent });
 	} catch (error) {
-		// biome-ignore lint/suspicious/noConsole: <explanation>
+		// biome-ignore lint/suspicious/noConsole: Its fine
 		console.error("Error processing component request:", error);
 		return NextResponse.json(
 			{ error: "Something went wrong" },
