@@ -59,6 +59,13 @@
             "--discord-background": "oklch(0.13 0.005 285.67)",
             "--discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
             "--discord-mention-foreground": "oklch(0.39 0.1288 271.41)"
+          },
+          ".discord-mention": {
+            "background-color": "color-mix(in srgb, var(--role-color) 10%, transparent);"
+          },
+
+          ".discord-mention:hover": {
+            "background-color": "color-mix(in srgb, var(--role-color) 30%, transparent);"
           }
         }
       }

@@ -179,6 +179,14 @@
 
 		--discord-embed-background: oklch(0.191 0.0043 264.47);
 	}
+
+	.discord-mention {
+		background-color: color-mix(in srgb, var(--role-color) 10%, transparent);
+	}
+
+	.discord-mention:hover {
+		background-color: color-mix(in srgb, var(--role-color) 30%, transparent);
+	}
 }
 
 [data-rehype-pretty-code-fragment] {
@@ -231,12 +239,4 @@
 
 [data-rehype-pretty-code-title] + pre {
 	@apply mt-2;
-}
-
-.discord-mention {
-	background-color: color-mix(in srgb, var(--role-color) 10%, transparent);
-}
-
-.discord-mention:hover {
-	background-color: color-mix(in srgb, var(--role-color) 30%, transparent);
 }
