@@ -8,7 +8,7 @@ import {
 	DiscordMessageAuthorName,
 	DiscordMessageContent,
 	DiscordMessageGroup
-} from "@/registry/new-york/discord-base/discord-base";
+} from "@/registry/discord-base/discord-base";
 
 export default function Home() {
 	return (
