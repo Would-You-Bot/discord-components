@@ -13,7 +13,9 @@ import {
 	DiscordEmbed,
 	DiscordEmbedAuthor,
 	DiscordEmbedAuthorImage,
-	DiscordEmbedAuthorName
+	DiscordEmbedAuthorName,
+	DiscordEmbedDescription,
+	DiscordEmbedTitle
 } from "@/registry/discord-embeds/discord-embeds";
 
 export default function Home() {
@@ -430,6 +432,15 @@ export default function Home() {
 													Woofer21
 												</DiscordEmbedAuthorName>
 											</DiscordEmbedAuthor>
+											<DiscordEmbedTitle
+												href="#"
+												isLink
+											>
+												This is a title with a link for embeds!
+											</DiscordEmbedTitle>
+											<DiscordEmbedDescription>
+												This is the embed description!!
+											</DiscordEmbedDescription>
 										</DiscordEmbed>
 									</DiscordMessage>
 								</DiscordMessageContent>
@@ -462,6 +473,12 @@ export default function Home() {
 													Woofer21
 												</DiscordEmbedAuthorName>
 											</DiscordEmbedAuthor>
+											<DiscordEmbedTitle>
+												This is a normal title for embeds!
+											</DiscordEmbedTitle>
+											<DiscordEmbedDescription>
+												This is the embed description!!
+											</DiscordEmbedDescription>
 										</DiscordEmbed>
 									</DiscordMessage>
 								</DiscordMessageContent>

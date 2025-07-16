@@ -2,6 +2,19 @@ import type React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
+type DiscordEmbedLinkItemBaseProps = {
+	className?: string;
+	children: React.ReactNode;
+};
+
+type DiscordEmbedItemWithoutLink = DiscordEmbedLinkItemBaseProps &
+	React.ComponentPropsWithoutRef<"p"> & { isLink?: false; href?: never };
+type DiscordEmbedItemWithLink = DiscordEmbedLinkItemBaseProps &
+	React.ComponentPropsWithoutRef<"a"> & { isLink: true; href: string };
+type DiscordEmbedLinkItemProps =
+	| DiscordEmbedItemWithoutLink
+	| DiscordEmbedItemWithLink;
+
 function DiscordEmbed({
 	className,
 	children,
@@ -41,26 +54,13 @@ function DiscordEmbedAuthor({
 	);
 }
 
-type DiscordEmbedAuthorNameBaseProps = {
-	className?: string;
-	children: React.ReactNode;
-};
-
-type DiscordEmbedAuthorNameWithoutLink = DiscordEmbedAuthorNameBaseProps &
-	React.ComponentPropsWithoutRef<"p"> & { isLink?: false; href?: never };
-type DiscordEmbedAuthorNameWithLink = DiscordEmbedAuthorNameBaseProps &
-	React.ComponentPropsWithoutRef<"a"> & { isLink: true; href: string };
-type DiscordEmbedAuthorNameProps =
-	| DiscordEmbedAuthorNameWithoutLink
-	| DiscordEmbedAuthorNameWithLink;
-
 function DiscordEmbedAuthorName({
 	className,
 	children,
 	isLink = false,
 	href,
 	...props
-}: DiscordEmbedAuthorNameProps) {
+}: DiscordEmbedLinkItemProps) {
 	if (isLink) {
 		return (
 			<a
@@ -118,9 +118,69 @@ function DiscordEmbedAuthorImage({
 	);
 }
 
+function DiscordEmbedTitle({
+	className,
+	children,
+	isLink = false,
+	href,
+	...props
+}: DiscordEmbedLinkItemProps) {
+	return (
+		<div
+			className="col-[1/1] mt-[8px] font-semibold text-[1rem] text-foreground"
+			data-slot="discord-embed-title-wrapper"
+		>
+			{isLink ? (
+				<a
+					className={cn(
+						"cursor-pointer text-discord-link hover:underline",
+						className
+					)}
+					data-slot="discord-embed-title"
+					href={href}
+					style={{ wordBreak: "break-word" }}
+					{...(props as React.ComponentPropsWithoutRef<"a">)}
+				>
+					{children}
+				</a>
+			) : (
+				<p
+					className={cn("", className)}
+					data-slot="discord-embed-title"
+					style={{ wordBreak: "break-word" }}
+					{...(props as React.ComponentPropsWithoutRef<"p">)}
+				>
+					{children}
+				</p>
+			)}
+		</div>
+	);
+}
+
+function DiscordEmbedDescription({
+	className,
+	children,
+	...props
+}: React.ComponentProps<"p">) {
+	return (
+		<p
+			className={cn(
+				"col-[1/1] mt-[8px] text-[.875rem]/[1.125rem] text-foreground/95",
+				className
+			)}
+			data-slot="discord-embed-description"
+			{...props}
+		>
+			{children}
+		</p>
+	);
+}
+
 export {
 	DiscordEmbed,
 	DiscordEmbedAuthor,
 	DiscordEmbedAuthorName,
-	DiscordEmbedAuthorImage
+	DiscordEmbedAuthorImage,
+	DiscordEmbedTitle,
+	DiscordEmbedDescription
 };
