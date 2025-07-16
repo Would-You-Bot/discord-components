@@ -7,13 +7,13 @@ import {
 	DiscordMessageAuthorImage,
 	DiscordMessageAuthorName,
 	DiscordMessageContent,
-	DiscordMessageGroup,
+	DiscordMessageGroup
 } from "@/registry/discord-base/discord-base";
 import {
 	DiscordEmbed,
 	DiscordEmbedAuthor,
 	DiscordEmbedAuthorImage,
-	DiscordEmbedAuthorName,
+	DiscordEmbedAuthorName
 } from "@/registry/discord-embeds/discord-embeds";
 
 export default function Home() {
@@ -34,7 +34,10 @@ export default function Home() {
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
 							Example of basic discord messages
 						</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
@@ -107,7 +110,10 @@ export default function Home() {
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
 							Simple Mentions
 						</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
@@ -131,7 +137,10 @@ export default function Home() {
 										<br />
 										<DiscordMention type="role">Admin</DiscordMention> help!!!!
 										<br />
-										<DiscordMention type="role" roleColor="#C759FF">
+										<DiscordMention
+											type="role"
+											roleColor="#C759FF"
+										>
 											Owner
 										</DiscordMention>{" "}
 										whats up bro
@@ -189,7 +198,10 @@ export default function Home() {
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
 							In-Server Message Link Mentions
 						</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
@@ -246,7 +258,10 @@ export default function Home() {
 										/>
 										<br />
 										Look at this new decoration, should I buy it?{" "}
-										<DiscordMention type="shop-link" modifierText="Aurora" />
+										<DiscordMention
+											type="shop-link"
+											modifierText="Aurora"
+										/>
 									</DiscordMessage>
 								</DiscordMessageContent>
 							</DiscordMessageGroup>
@@ -259,7 +274,10 @@ export default function Home() {
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
 							External Server Message Link Mentions
 						</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
@@ -384,7 +402,10 @@ export default function Home() {
 				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
 						<h2 className="text-muted-foreground text-sm sm:pl-3">An Embed</h2>
-						<OpenInV0Button name="hello-world" className="w-fit" />
+						<OpenInV0Button
+							name="hello-world"
+							className="w-fit"
+						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
 						<DiscordChat>
@@ -434,7 +455,10 @@ export default function Home() {
 													alt="Avatar"
 													fallback="WF"
 												/>
-												<DiscordEmbedAuthorName isLink href="#">
+												<DiscordEmbedAuthorName
+													isLink
+													href="#"
+												>
 													Woofer21
 												</DiscordEmbedAuthorName>
 											</DiscordEmbedAuthor>

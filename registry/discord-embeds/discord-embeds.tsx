@@ -12,11 +12,11 @@ function DiscordEmbed({
 }) {
 	return (
 		<article
-			data-slot="discord-embed"
 			className={cn(
-				"grid-rows[auto] grid grid-cols-[auto] flex-col rounded-md border border-l-4 pt-[.125rem] bg-discord-embed-background pr-[1rem] pb-[1rem] pl-[.75rem]",
-				className,
+				"grid-rows[auto] grid grid-cols-[auto] flex-col rounded-md border border-l-4 bg-discord-embed-background pt-[.125rem] pr-[1rem] pb-[1rem] pl-[.75rem]",
+				className
 			)}
+			data-slot="discord-embed"
 			style={{ borderLeftColor: color ?? "#5863e4" }}
 			{...props}
 		>
@@ -32,8 +32,8 @@ function DiscordEmbedAuthor({
 }: React.ComponentProps<"div">) {
 	return (
 		<div
-			data-slot="discord-embed-author"
 			className={cn("col-[1/1] mt-2 flex items-center", className)}
+			data-slot="discord-embed-author"
 			{...props}
 		>
 			{children}
@@ -64,11 +64,11 @@ function DiscordEmbedAuthorName({
 	if (isLink) {
 		return (
 			<a
-				data-slot="discord-embed-author-name"
 				className={cn(
 					"font-semibold text-[.875rem] text-foreground hover:underline",
-					className,
+					className
 				)}
+				data-slot="discord-embed-author-name"
 				href={href}
 				{...(props as React.ComponentPropsWithoutRef<"a">)}
 			>
@@ -79,8 +79,8 @@ function DiscordEmbedAuthorName({
 
 	return (
 		<p
-			data-slot="discord-embed-author-name"
 			className={cn("font-semibold text-[.875rem] text-foreground", className)}
+			data-slot="discord-embed-author-name"
 			{...(props as React.ComponentPropsWithoutRef<"p">)}
 		>
 			{children}
@@ -101,15 +101,15 @@ function DiscordEmbedAuthorImage({
 }) {
 	return (
 		<Avatar
-			data-slot="discord-embed-author-avatar"
 			className="mr-2 h-[24px] w-[24px]"
+			data-slot="discord-embed-author-avatar"
 			{...props}
 		>
 			<AvatarImage
-				data-slot="discord-embed-author-image"
-				className={cn("rounded-full", className)}
-				src={src}
 				alt={alt}
+				className={cn("rounded-full", className)}
+				data-slot="discord-embed-author-image"
+				src={src}
 			/>
 			<AvatarFallback data-slot="discord-embed-author-fallback">
 				{fallback}
@@ -122,5 +122,5 @@ export {
 	DiscordEmbed,
 	DiscordEmbedAuthor,
 	DiscordEmbedAuthorName,
-	DiscordEmbedAuthorImage,
+	DiscordEmbedAuthorImage
 };
