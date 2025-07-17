@@ -411,8 +411,8 @@ export default function Home() {
 							name="hello-world"
 						/>
 					</div>
-					<div className="relative flex min-h-[400px] items-center justify-center">
-						<DiscordChat>
+					<div className="relative flex min-h-[400px] w-full items-center justify-center">
+						<DiscordChat className="w-full">
 							<DiscordMessageGroup>
 								<DiscordMessageContent>
 									<DiscordMessageAuthor>
@@ -461,7 +461,7 @@ export default function Home() {
 										</DiscordMessageAuthorName>
 									</DiscordMessageAuthor>
 									<DiscordMessage>
-										<DiscordEmbed>
+										<DiscordEmbed thumbnail="/images/avatars/Woofer.webp">
 											<DiscordEmbedAuthor>
 												<DiscordEmbedAuthorImage
 													alt="Avatar"
@@ -482,7 +482,7 @@ export default function Home() {
 												This is the embed description!!
 											</DiscordEmbedDescription>
 											<DiscordEmbedFieldWrapper>
-												<DiscordEmbedFields 
+												<DiscordEmbedFields
 													fields={[
 														{
 															name: "Field 1",

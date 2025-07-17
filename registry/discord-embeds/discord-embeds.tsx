@@ -19,20 +19,40 @@ function DiscordEmbed({
 	className,
 	children,
 	color,
+	thumbnail,
+	thumbnailAlt,
 	...props
 }: React.ComponentProps<"article"> & {
 	color?: string;
+	thumbnail?: string;
+	thumbnailAlt?: string;
 }) {
 	return (
 		<article
 			className={cn(
-				"grid-rows[auto] grid grid-cols-[auto] flex-col rounded-md border border-l-4 bg-discord-embed-background pt-[.125rem] pr-[1rem] pb-[1rem] pl-[.75rem]",
+				"grid max-w-[520px] grid-rows-[auto] flex-col rounded-md border border-l-4 bg-discord-embed-background pt-[.125rem] pr-[1rem] pb-[1rem] pl-[.75rem]",
 				className
 			)}
 			data-slot="discord-embed"
-			style={{ borderLeftColor: color ?? "#5863e4" }}
+			style={{
+				borderLeftColor: color ?? "#5863e4",
+				gridTemplateColumns: thumbnail ? "minmax(0, 1fr)" : "auto"
+			}}
 			{...props}
 		>
+			{thumbnail && (
+				<div className="col-[2/2] row-[1/8] mt-[8px] ml-[16px] justify-self-end object-fill">
+					<div className="flex h-full w-full flex-row flex-nowrap">
+						<div className="relative block rounded-[3px]">
+							<img
+								alt={thumbnailAlt}
+								className="h-[80px] w-[80px]"
+								src={thumbnail ?? "Embed thumbnail image"}
+							/>
+						</div>
+					</div>
+				</div>
+			)}
 			{children}
 		</article>
 	);
@@ -220,19 +240,19 @@ function DiscordEmbedFields({
 	for (const item of fields) {
 		if (item.inline) {
 			inlineCount++;
-			
+
 			switch (inlineCount) {
 				case 1:
-					splits.push("1/13")
+					splits.push("1/13");
 					break;
 				case 2:
-					splits[splits.length - 1] = "1/7"
-					splits.push("7/13")
+					splits[splits.length - 1] = "1/7";
+					splits.push("7/13");
 					break;
 				case 3:
-					splits[splits.length - 2] = "1/5"
-					splits[splits.length - 1] = "5/9"
-					splits.push("9/13")
+					splits[splits.length - 2] = "1/5";
+					splits[splits.length - 1] = "5/9";
+					splits.push("9/13");
 					inlineCount = 0;
 					break;
 				default:
