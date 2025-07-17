@@ -15,6 +15,8 @@ import {
 	DiscordEmbedAuthorImage,
 	DiscordEmbedAuthorName,
 	DiscordEmbedDescription,
+	DiscordEmbedFields,
+	DiscordEmbedFieldWrapper,
 	DiscordEmbedTitle
 } from "@/registry/discord-embeds/discord-embeds";
 
@@ -479,6 +481,34 @@ export default function Home() {
 											<DiscordEmbedDescription>
 												This is the embed description!!
 											</DiscordEmbedDescription>
+											<DiscordEmbedFieldWrapper>
+												<DiscordEmbedFields 
+													fields={[
+														{
+															name: "Field 1",
+															value: "This is the value of field 1",
+															inline: true
+														},
+														{
+															name: "Field 2",
+															value: "This is the value of field 2",
+															inline: true
+														},
+														{
+															name: "Field 3",
+															value: "This is the value of field 3"
+														},
+														{
+															name: "Field 4",
+															value: "This is the value of field 4"
+														},
+														{
+															name: "Field 5",
+															value: "This is the value of field 5"
+														}
+													]}
+												/>
+											</DiscordEmbedFieldWrapper>
 										</DiscordEmbed>
 									</DiscordMessage>
 								</DiscordMessageContent>

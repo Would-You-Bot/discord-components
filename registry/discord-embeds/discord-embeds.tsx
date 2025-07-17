@@ -176,11 +176,126 @@ function DiscordEmbedDescription({
 	);
 }
 
+function DiscordEmbedFieldWrapper({
+	className,
+	children,
+	...props
+}: React.ComponentProps<"div">) {
+	return (
+		<div
+			className={cn("cols-[1/1] mt-[8px] grid gap-[8px]", className)}
+			data-slot="discord-embed-field-wrapper"
+			{...props}
+		>
+			{children}
+		</div>
+	);
+}
+
+type DiscordEmbedFieldProps = {
+	name: string | React.ReactNode;
+	value: string | React.ReactNode;
+	inline?: boolean;
+	wrapperCustomClass?: string;
+	nameCustomClass?: string;
+	valueCustomClass?: string;
+};
+
+type DiscordEmbedFieldsProps = {
+	fields: DiscordEmbedFieldProps[];
+	wrapperCustomClass?: string;
+	nameCustomClass?: string;
+	valueCustomClass?: string;
+};
+
+function DiscordEmbedFields({
+	fields,
+	wrapperCustomClass,
+	nameCustomClass,
+	valueCustomClass
+}: DiscordEmbedFieldsProps) {
+	const splits: string[] = [];
+	let inlineCount = 0;
+
+	for (const item of fields) {
+		if (item.inline) {
+			inlineCount++;
+			
+			switch (inlineCount) {
+				case 1:
+					splits.push("1/13")
+					break;
+				case 2:
+					splits[splits.length - 1] = "1/7"
+					splits.push("7/13")
+					break;
+				case 3:
+					splits[splits.length - 2] = "1/5"
+					splits[splits.length - 1] = "5/9"
+					splits.push("9/13")
+					inlineCount = 0;
+					break;
+				default:
+					break;
+			}
+		} else {
+			inlineCount = 0;
+			splits.push("1/13");
+		}
+	}
+
+	return (
+		<>
+			{fields.map((item, index) => (
+				<div
+					className={cn(
+						"text-[.875rem]/[1.125rem]",
+						wrapperCustomClass,
+						item.wrapperCustomClass
+					)}
+					key={`field-${item.name}-${index}`}
+					style={{ gridColumn: splits[index] }}
+				>
+					{typeof item.name === "string" ? (
+						<p
+							className={cn(
+								"mb-[2px] font-semibold text-foreground",
+								nameCustomClass,
+								item.nameCustomClass
+							)}
+						>
+							{item.name}
+						</p>
+					) : (
+						item.name
+					)}
+
+					{typeof item.value === "string" ? (
+						<p
+							className={cn(
+								"text-foreground/95",
+								valueCustomClass,
+								item.valueCustomClass
+							)}
+						>
+							{item.value}
+						</p>
+					) : (
+						item.value
+					)}
+				</div>
+			))}
+		</>
+	);
+}
+
 export {
 	DiscordEmbed,
 	DiscordEmbedAuthor,
 	DiscordEmbedAuthorName,
 	DiscordEmbedAuthorImage,
 	DiscordEmbedTitle,
-	DiscordEmbedDescription
+	DiscordEmbedDescription,
+	DiscordEmbedFieldWrapper,
+	DiscordEmbedFields
 };
