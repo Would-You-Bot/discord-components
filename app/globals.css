@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+:root {
+  --fd-nav-width: 100px !important;
+}
 
 @custom-variant dark (&:is(.dark *));
 
