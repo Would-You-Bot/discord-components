@@ -30,9 +30,10 @@ function DiscordEmbed({
 	return (
 		<article
 			className={cn(
-				"grid max-w-[520px] grid-rows-[auto] flex-col rounded-md border border-l-4 bg-discord-embed-background pt-[.125rem] pr-[1rem] pb-[1rem] pl-[.75rem]",
+				"group grid max-w-[520px] grid-rows-[auto] flex-col rounded-md border border-l-4 bg-discord-embed-background pt-[.125rem] pr-[1rem] pb-[1rem] pl-[.75rem]",
 				className
 			)}
+			data-has-thumbnail={!!thumbnail}
 			data-slot="discord-embed"
 			style={{
 				borderLeftColor: color ?? "#5863e4",
@@ -310,6 +311,90 @@ function DiscordEmbedFields({
 	);
 }
 
+function DiscordEmbedFooter({
+	className,
+	children,
+	...props
+}: React.ComponentProps<"div">) {
+	return (
+		<div
+			className={cn(
+				"col-[1/1] mt-[8px] flex items-center group-data-[has-thumbnail=true]:col-[1/3]",
+				className
+			)}
+			data-slot="discord-embed-footer"
+			{...props}
+		>
+			{children}
+		</div>
+	);
+}
+
+function DiscordEmbedFooterImage({
+	src,
+	alt,
+	fallback,
+	className,
+	...props
+}: React.ComponentProps<typeof Avatar> & {
+	src: string;
+	alt: string;
+	fallback: string;
+}) {
+	return (
+		<Avatar
+			className="mr-[8px] h-[20px] w-[20px]"
+			data-slot="discord-embed-footer-avatar"
+			{...props}
+		>
+			<AvatarImage
+				alt={alt}
+				className={cn("rounded-full", className)}
+				data-slot="discord-embed-footer-image"
+				src={src}
+			/>
+			<AvatarFallback data-slot="discord-embed-footer-fallback">
+				{fallback}
+			</AvatarFallback>
+		</Avatar>
+	);
+}
+
+function DiscordEmbedFooterText({
+	className,
+	children,
+	date,
+	...props
+}: React.ComponentProps<"span"> & { date?: Date }) {
+	return (
+		<span
+			className={cn(
+				"font-medium text-[.75rem]/[1rem] text-foreground/95",
+				className
+			)}
+			data-slot="discord-embed-footer-text"
+			{...props}
+		>
+			{children}
+			{date && (
+				<>
+					<span className="mx-[4px]"> • </span>{" "}
+					{date
+						.toLocaleString()
+						.replace(",", "")
+						.split(":")
+						.map((item, index) =>
+							index === 2
+								? item.split(" ")[1]
+								: `${item}${index === 0 ? ":" : " "}`
+						)
+						.join("")}
+				</>
+			)}
+		</span>
+	);
+}
+
 export {
 	DiscordEmbed,
 	DiscordEmbedAuthor,
@@ -318,5 +403,8 @@ export {
 	DiscordEmbedTitle,
 	DiscordEmbedDescription,
 	DiscordEmbedFieldWrapper,
-	DiscordEmbedFields
+	DiscordEmbedFields,
+	DiscordEmbedFooter,
+	DiscordEmbedFooterImage,
+	DiscordEmbedFooterText
 };

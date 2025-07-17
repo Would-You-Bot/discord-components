@@ -17,6 +17,9 @@ import {
 	DiscordEmbedDescription,
 	DiscordEmbedFields,
 	DiscordEmbedFieldWrapper,
+	DiscordEmbedFooter,
+	DiscordEmbedFooterImage,
+	DiscordEmbedFooterText,
 	DiscordEmbedTitle
 } from "@/registry/discord-embeds/discord-embeds";
 
@@ -443,6 +446,11 @@ export default function Home() {
 											<DiscordEmbedDescription>
 												This is the embed description!!
 											</DiscordEmbedDescription>
+											<DiscordEmbedFooter>
+												<DiscordEmbedFooterText date={new Date()}>
+													Cool Footer for Me
+												</DiscordEmbedFooterText>
+											</DiscordEmbedFooter>
 										</DiscordEmbed>
 									</DiscordMessage>
 								</DiscordMessageContent>
@@ -509,6 +517,16 @@ export default function Home() {
 													]}
 												/>
 											</DiscordEmbedFieldWrapper>
+											<DiscordEmbedFooter>
+												<DiscordEmbedFooterImage
+													alt="Avatar"
+													fallback="WF"
+													src="/images/avatars/Woofer.webp"
+												/>
+												<DiscordEmbedFooterText date={new Date()}>
+													Cool Footer for Me
+												</DiscordEmbedFooterText>
+											</DiscordEmbedFooter>
 										</DiscordEmbed>
 									</DiscordMessage>
 								</DiscordMessageContent>
