@@ -44,6 +44,7 @@ function DiscordEmbed({
 				<div className="col-[2/2] row-[1/8] mt-[8px] ml-[16px] justify-self-end object-fill">
 					<div className="flex h-full w-full flex-row flex-nowrap">
 						<div className="relative block rounded-[3px]">
+							{/** biome-ignore lint/performance/noImgElement: Keeping it basic */}
 							<img
 								alt={thumbnailAlt}
 								className="h-[80px] w-[80px]"
