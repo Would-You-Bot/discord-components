@@ -48,7 +48,7 @@ export async function GET(
 		// Return the component with the files.
 		return NextResponse.json({ ...registryItem, files: filesWithContent });
 	} catch (error) {
-		// biome-ignore lint/suspicious/noConsole: <explanation>
+		// biome-ignore lint/suspicious/noConsole: Fine to have
 		console.error("Error processing component request:", error);
 		return NextResponse.json(
 			{ error: "Something went wrong" },

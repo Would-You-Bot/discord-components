@@ -13,16 +13,8 @@ import {
 export default function Home() {
 	return (
 		<div className="mx-auto flex min-h-svh max-w-3xl flex-col gap-8 px-4 py-8">
-			<header className="flex flex-col gap-1">
-				<h1 className="font-bold text-3xl tracking-tight">
-					Discord Components
-				</h1>
-				<p className="text-muted-foreground">
-					A collection of discord components for integrating discord UIs into
-					your project.
-				</p>
-			</header>
 			<main className="flex flex-1 flex-col gap-8">
+				<h1 className="font-bold text-3xl">Examples</h1>
 				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
 					<div className="flex items-center justify-between">
 						<h2 className="text-muted-foreground text-sm sm:pl-3">
@@ -398,7 +390,7 @@ export default function Home() {
 					<p className="text-muted-foreground text-sm">
 						Made with <span>❤️</span> by{" "}
 						<a
-							className="text-white/80 hover:underline"
+							className="text-foreground/80 hover:underline"
 							href="https://woofer21.com/"
 							target="_blank"
 							rel="noreferrer"
@@ -407,7 +399,7 @@ export default function Home() {
 						</a>{" "}
 						and{" "}
 						<a
-							className="text-white/80 hover:underline"
+							className="text-foreground/80 hover:underline"
 							href="https://github.com/Would-You-Bot/discord-components/graphs/contributors"
 							target="_blank"
 							rel="noreferrer"
@@ -417,7 +409,7 @@ export default function Home() {
 						!
 					</p>
 					<a
-						className="text-white/80 hover:underline"
+						className="text-foreground/80 hover:underline"
 						target="_blank"
 						rel="noreferrer"
 						href="https://wouldyoubot.gg/legal"
