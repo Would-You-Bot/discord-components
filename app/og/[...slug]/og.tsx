@@ -80,8 +80,8 @@ export function generate({
 					{/* biome-ignore lint/nursery/noImgElement: Image doesn't work with next/og */}
 					<img
 						src="https://wouldyoubot.gg/Logo.png"
-						height="85"
-						width="53"
+						height="55"
+						width="55"
 						alt="Would You logo"
 					/>
 					<p
