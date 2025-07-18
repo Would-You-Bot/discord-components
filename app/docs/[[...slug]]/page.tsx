@@ -71,7 +71,7 @@ function DocsCategory({ url }: { url: string }) {
 	);
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
 	return source.generateParams();
 }
 
@@ -80,7 +80,9 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
 	const { slug = [] } = await props.params;
 	const page = source.getPage(slug);
-	if (!page) notFound();
+	if (!page) {
+		notFound();
+	}
 
 	const description =
 		page.data.description ||
