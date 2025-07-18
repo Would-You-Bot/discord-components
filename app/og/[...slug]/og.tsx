@@ -77,7 +77,7 @@ export function generate({
 						color: primaryTextColor
 					}}
 				>
-					{/* biome-ignore lint/nursery/noImgElement: Image doesnt work with next/og */}
+					{/* biome-ignore lint/nursery/noImgElement: Image doesn't work with next/og */}
 					<img
 						src="https://wouldyoubot.gg/Logo.png"
 						height="85"
