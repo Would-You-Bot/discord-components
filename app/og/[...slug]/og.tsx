@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import type { ReactElement, ReactNode } from "react";
 import type { ImageResponseOptions } from "next/dist/compiled/@vercel/og/types";
-import Image from "next/image";
 
 interface GenerateProps {
 	title: ReactNode;
@@ -78,7 +77,8 @@ export function generate({
 						color: primaryTextColor
 					}}
 				>
-					<Image
+					{/* biome-ignore lint/nursery/noImgElement: Image doesnt work with next/og */}
+					<img
 						src="https://wouldyoubot.gg/Logo.png"
 						height="85"
 						width="53"
