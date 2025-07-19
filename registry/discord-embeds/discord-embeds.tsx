@@ -101,7 +101,10 @@ function DiscordEmbedAuthorName({
 
 	return (
 		<p
-			className={cn("font-semibold text-[.875rem] text-discord-header", className)}
+			className={cn(
+				"font-semibold text-[.875rem] text-discord-header",
+				className
+			)}
 			data-slot="discord-embed-author-name"
 			{...(props as React.ComponentPropsWithoutRef<"p">)}
 		>
@@ -377,15 +380,15 @@ function DiscordEmbedImages({
 				<>
 					<div className="flex flex-col overflow-hidden">
 						<DiscordEmbedImage {...images[0]} />
+					</div>
+					<div className="flex flex-col overflow-hidden">
+						{/** biome-ignore lint/style/noNonNullAssertion: Images [1] exists here via the switch case */}
+						<DiscordEmbedImage {...images[1]!} />
 						<DiscordEmbedImage
 							// biome-ignore lint/style/noNonNullAssertion: Images [2] exists here via the switch case
 							{...images[2]!}
 							className={cn("mt-[4px]", images[2]?.className)}
 						/>
-					</div>
-					<div className="flex flex-col overflow-hidden">
-						{/** biome-ignore lint/style/noNonNullAssertion: Images [1] exists here via the switch case */}
-						<DiscordEmbedImage {...images[1]!} />
 					</div>
 				</>
 			);
@@ -427,7 +430,7 @@ function DiscordEmbedImage({
 		// biome-ignore lint/performance/noImgElement: Keeping it basic
 		<img
 			alt={alt ?? "Embed Image"}
-			className={cn(className)}
+			className={cn("h-full w-full object-cover", className)}
 			data-slot="discord-embed-image"
 			src={src}
 			{...props}

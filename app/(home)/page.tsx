@@ -1,3 +1,4 @@
+"use client"
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import {
 	DiscordChat,
@@ -516,11 +517,11 @@ export default function Home() {
 													images={[
 														{
 															src: "/images/avatars/Woofer.webp",
-															alt: "Avatar"
-														},
-														{
-															src: "/images/avatars/Woofer.webp",
-															alt: "Avatar"
+															alt: "Avatar",
+															onClick: () => {
+																alert("You clicked on the image!");
+															},
+															className: "cursor-pointer"
 														},
 														{
 															src: "/images/avatars/Woofer.webp",
