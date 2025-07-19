@@ -9,7 +9,7 @@
       "title": "Discord Base",
       "description": "The base components for all Discord components",
       "registryDependencies": ["avatar"],
-      "dependencies": ["class-variance-authority"],
+      "dependencies": ["class-variance-authority", "react"],
       "files": [
         {
           "path": "registry/discord-base/discord-base.tsx",
@@ -72,6 +72,47 @@
 
           ".discord-mention:hover": {
             "background-color": "color-mix(in srgb, var(--role-color) 30%, transparent);"
+          }
+        }
+      }
+    },
+    {
+      "name": "discord-embed",
+      "type": "registry:component",
+      "title": "Discord Embeds",
+      "description": "The component for creating Discord embeds",
+      "registryDependencies": [
+        "avatar",
+        "https://discord-components.com/r/discord-base.json"
+      ],
+      "dependencies": ["class-variance-authority", "react"],
+      "files": [
+        {
+          "path": "registry/discord-embeds/discord-embeds.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "discord-embed-background": "oklch(0.2624 0.0093 285.74)"
+        }
+      },
+      "css": {
+        "@layer base": {
+          ".discord-light": {
+            "--discord-embed-background": "oklch(1 0 0)"
+          },
+          ".discord-classic": {
+            "--discord-embed-background": "oklch(0.145 0 0)"
+          },
+          ".discord-ash": {
+            "--discord-embed-background": "oklch(0.3502 0.0122 279.28)"
+          },
+          ".discord-dark": {
+            "--discord-embed-background": "oklch(0.2624 0.0093 285.74)"
+          },
+          ".discord-onyx": {
+            "--discord-embed-background": "oklch(0.191 0.0043 264.47)"
           }
         }
       }
