@@ -1,16 +1,16 @@
-import { source } from "@/lib/source";
+import { getGithubLastEdit, getPageTreePeers } from "fumadocs-core/server";
+import { Card, Cards } from "fumadocs-ui/components/card";
+import { createRelativeLink } from "fumadocs-ui/mdx";
 import {
-	DocsPage,
 	DocsBody,
 	DocsDescription,
+	DocsPage,
 	DocsTitle
 } from "fumadocs-ui/page";
-import { notFound } from "next/navigation";
-import { createRelativeLink } from "fumadocs-ui/mdx";
-import { getMDXComponents } from "@/mdx-components";
-import { getGithubLastEdit, getPageTreePeers } from "fumadocs-core/server";
 import type { Metadata } from "next";
-import { Card, Cards } from "fumadocs-ui/components/card";
+import { notFound } from "next/navigation";
+import { source } from "@/lib/source";
+import { getMDXComponents } from "@/mdx-components";
 
 export default async function Page(props: {
 	params: Promise<{ slug?: string[] }>;
@@ -31,12 +31,12 @@ export default async function Page(props: {
 
 	return (
 		<DocsPage
-			toc={page.data.toc}
 			full={page.data.full}
+			lastUpdate={time ? new Date(time) : undefined}
 			tableOfContent={{
 				style: "clerk"
 			}}
-			lastUpdate={time ? new Date(time) : undefined}
+			toc={page.data.toc}
 		>
 			<DocsTitle>{page.data.title}</DocsTitle>
 			<DocsDescription>{page.data.description}</DocsDescription>
@@ -45,6 +45,7 @@ export default async function Page(props: {
 					components={getMDXComponents({
 						// this allows you to link to other pages with relative file paths
 						a: createRelativeLink(source, page),
+						// biome-ignore lint/nursery/noNestedComponentDefinitions: needed for docs to work
 						DocsCategory: ({ url }) => {
 							return <DocsCategory url={url ?? page.url} />;
 						}
@@ -60,9 +61,9 @@ function DocsCategory({ url }: { url: string }) {
 		<Cards>
 			{getPageTreePeers(source.pageTree, url).map((peer) => (
 				<Card
+					href={peer.url}
 					key={peer.url}
 					title={peer.name}
-					href={peer.url}
 				>
 					{peer.description}
 				</Card>

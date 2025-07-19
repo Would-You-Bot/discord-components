@@ -24,7 +24,7 @@
       "!**/.gitattributes",
       "!**/.npmrc",
       "!**/.env*",
-      ".source"
+      "!**/.source"
     ]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },

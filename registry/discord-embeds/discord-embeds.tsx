@@ -377,8 +377,11 @@ function DiscordEmbedImages({
 				<>
 					<div className="flex flex-col overflow-hidden">
 						<DiscordEmbedImage {...images[0]} />
-						{/** biome-ignore lint/style/noNonNullAssertion: Images [2] exists here via the switch case */}
-						<DiscordEmbedImage {...images[2]!} className={cn("mt-[4px]", images[2]!.className)} />
+						<DiscordEmbedImage
+							// biome-ignore lint/style/noNonNullAssertion: Images [2] exists here via the switch case
+							{...images[2]!}
+							className={cn("mt-[4px]", images[2]?.className)}
+						/>
 					</div>
 					<div className="flex flex-col overflow-hidden">
 						{/** biome-ignore lint/style/noNonNullAssertion: Images [1] exists here via the switch case */}
@@ -391,14 +394,20 @@ function DiscordEmbedImages({
 				<>
 					<div className="flex flex-col overflow-hidden">
 						<DiscordEmbedImage {...images[0]} />
-						{/** biome-ignore lint/style/noNonNullAssertion: Images [2] exists here via the switch case */}
-						<DiscordEmbedImage {...images[2]!} className={cn("mt-[4px]", images[2]!.className)} />
+						<DiscordEmbedImage
+							// biome-ignore lint/style/noNonNullAssertion: Images [2] exists here via the switch case
+							{...images[2]!}
+							className={cn("mt-[4px]", images[2]?.className)}
+						/>
 					</div>
 					<div className="flex flex-col overflow-hidden">
 						{/** biome-ignore lint/style/noNonNullAssertion: Images [1] exists here via the switch case */}
 						<DiscordEmbedImage {...images[1]!} />
-						{/** biome-ignore lint/style/noNonNullAssertion: Images [3] exists here via the switch case */}
-						<DiscordEmbedImage {...images[3]!} className={cn("mt-[4px]", images[3]!.className)} />
+						<DiscordEmbedImage
+							// biome-ignore lint/style/noNonNullAssertion: Images [3] exists here via the switch case
+							{...images[3]!}
+							className={cn("mt-[4px]", images[3]?.className)}
+						/>
 					</div>
 				</>
 			);
