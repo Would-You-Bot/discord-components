@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "Discord Components",
+  "homepage": "https://discord-components.com",
   "items": [
     {
       "name": "discord-base",
@@ -26,7 +26,9 @@
       ],
       "cssVars": {
         "light": {
+          "discord-foreground": "oklch(0.9065 0.0029 264.54)",
           "discord-background": "oklch(0.32 0.0107 278.25)",
+          "discord-header": "oklch(0.9897 0.0042 271.37)",
           "discord-link": "oklch(0.6096 0.1616 255.17)",
           "discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
           "discord-mention-foreground": "oklch(0.88 0.0574 270.02)",
@@ -37,7 +39,10 @@
       "css": {
         "@layer base": {
           ".discord-light": {
+            "--discord-foreground": "oklch(0.322 0.0089 276.86)",
             "--discord-background": "oklch(0.99 0 0)",
+            "--discord-header": "oklch(0.1914 0.0089 276.86)",
+
             "--discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
             "--discord-mention-foreground": "oklch(0.88 0.0574 270.02)"
           },
