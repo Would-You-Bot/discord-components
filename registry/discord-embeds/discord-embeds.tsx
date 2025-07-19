@@ -30,7 +30,7 @@ function DiscordEmbed({
 	return (
 		<article
 			className={cn(
-				"group grid max-w-[520px] grid-rows-[auto] flex-col rounded-md border border-l-4 bg-discord-embed-background pt-[.125rem] pr-[1rem] pb-[1rem] pl-[.75rem]",
+				"group grid max-w-[520px] grid-rows-[auto] flex-col rounded-md border border-discord-foreground/5 border-l-4 bg-discord-embed-background pt-[.125rem] pr-[1rem] pb-[1rem] pl-[.75rem]",
 				className
 			)}
 			data-has-thumbnail={!!thumbnail}
@@ -87,7 +87,7 @@ function DiscordEmbedAuthorName({
 		return (
 			<a
 				className={cn(
-					"font-semibold text-[.875rem] text-foreground hover:underline",
+					"font-semibold text-[.875rem] text-discord-header hover:underline",
 					className
 				)}
 				data-slot="discord-embed-author-name"
@@ -101,7 +101,7 @@ function DiscordEmbedAuthorName({
 
 	return (
 		<p
-			className={cn("font-semibold text-[.875rem] text-foreground", className)}
+			className={cn("font-semibold text-[.875rem] text-discord-header", className)}
 			data-slot="discord-embed-author-name"
 			{...(props as React.ComponentPropsWithoutRef<"p">)}
 		>
@@ -149,7 +149,7 @@ function DiscordEmbedTitle({
 }: DiscordEmbedLinkItemProps) {
 	return (
 		<div
-			className="col-[1/1] mt-[8px] font-semibold text-[1rem] text-foreground"
+			className="col-[1/1] mt-[8px] font-semibold text-[1rem] text-discord-header"
 			data-slot="discord-embed-title-wrapper"
 		>
 			{isLink ? (
@@ -187,7 +187,7 @@ function DiscordEmbedDescription({
 	return (
 		<p
 			className={cn(
-				"col-[1/1] mt-[8px] text-[.875rem]/[1.125rem] text-foreground/95",
+				"col-[1/1] mt-[8px] text-[.875rem]/[1.125rem] text-discord-foreground",
 				className
 			)}
 			data-slot="discord-embed-description"
@@ -281,7 +281,7 @@ function DiscordEmbedFields({
 					{typeof item.name === "string" ? (
 						<p
 							className={cn(
-								"mb-[2px] font-semibold text-foreground",
+								"mb-[2px] font-semibold text-discord-header",
 								nameCustomClass,
 								item.nameCustomClass
 							)}
@@ -295,7 +295,7 @@ function DiscordEmbedFields({
 					{typeof item.value === "string" ? (
 						<p
 							className={cn(
-								"text-foreground/95",
+								"text-discord-foreground",
 								valueCustomClass,
 								item.valueCustomClass
 							)}
@@ -493,7 +493,7 @@ function DiscordEmbedFooterText({
 	return (
 		<span
 			className={cn(
-				"font-medium text-[.75rem]/[1rem] text-foreground/95",
+				"font-medium text-[.75rem]/[1rem] text-discord-foreground",
 				className
 			)}
 			data-slot="discord-embed-footer-text"

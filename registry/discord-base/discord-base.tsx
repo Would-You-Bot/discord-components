@@ -6,7 +6,7 @@ import Icons from "./discord-icons";
 import { formatDate } from "./lib/date-fns";
 
 const chatVariants = cva(
-	"flex flex-col rounded-md bg-discord-background py-4",
+	"flex flex-col rounded-md bg-discord-background py-4 text-discord-foreground",
 	{
 		variants: {
 			theme: {
@@ -18,7 +18,7 @@ const chatVariants = cva(
 			}
 		},
 		defaultVariants: {
-			theme: "ash"
+			theme: "dark"
 		}
 	}
 );
@@ -126,7 +126,7 @@ function DiscordMessageAuthorName({
 				{children}
 			</p>
 			<p
-				className="text-[0.75rem] text-muted-foreground"
+				className="text-[0.75rem] text-discord-foreground/50"
 				data-slot="discord-message-timestamp"
 			>
 				{formatDate(timestamp, hr24)}
