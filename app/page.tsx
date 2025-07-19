@@ -20,6 +20,8 @@ import {
 	DiscordEmbedFooter,
 	DiscordEmbedFooterImage,
 	DiscordEmbedFooterText,
+	DiscordEmbedImages,
+	DiscordEmbedImageWrapper,
 	DiscordEmbedTitle
 } from "@/registry/discord-embeds/discord-embeds";
 
@@ -517,6 +519,28 @@ export default function Home() {
 													]}
 												/>
 											</DiscordEmbedFieldWrapper>
+											<DiscordEmbedImageWrapper>
+												<DiscordEmbedImages
+													images={[
+														{
+															src: "/images/avatars/Woofer.webp",
+															alt: "Avatar"
+														},
+														{
+															src: "/images/avatars/Woofer.webp",
+															alt: "Avatar"
+														},
+														{
+															src: "/images/avatars/Woofer.webp",
+															alt: "Avatar"
+														},
+														{
+															src: "/images/avatars/Woofer.webp",
+															alt: "Avatar"
+														}
+													]}
+												/>
+											</DiscordEmbedImageWrapper>
 											<DiscordEmbedFooter>
 												<DiscordEmbedFooterImage
 													alt="Avatar"

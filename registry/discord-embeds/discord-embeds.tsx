@@ -311,6 +311,121 @@ function DiscordEmbedFields({
 	);
 }
 
+function DiscordEmbedImageWrapper({
+	className,
+	children,
+	...props
+}: React.ComponentProps<"div">) {
+	return (
+		<div
+			className={cn(
+				"col-[1/2] mt-[16px] grid grid-cols-2 gap-[4px] overflow-hidden rounded-[4px]",
+				className
+			)}
+			data-slot="discord-embed-image-wrapper"
+			{...props}
+		>
+			{children}
+		</div>
+	);
+}
+
+type DiscordEmbedImage = {
+	src: string;
+	alt: string;
+} & React.ComponentProps<"img">;
+type DiscordEmbedImagesProps = React.ComponentProps<"div"> & {
+	images: readonly [
+		DiscordEmbedImage,
+		DiscordEmbedImage?,
+		DiscordEmbedImage?,
+		DiscordEmbedImage?
+	];
+};
+
+//TODO - Improve this component
+function DiscordEmbedImages({
+	className,
+	children,
+	images,
+	...props
+}: DiscordEmbedImagesProps) {
+	switch (images.length) {
+		case 1:
+			return (
+				<div
+					className={cn("flex h-full w-full flex-row flex-nowrap", className)}
+					{...props}
+				>
+					<DiscordEmbedImage {...images[0]} />
+				</div>
+			);
+		case 2:
+			return (
+				<>
+					<div className="flex flex-col overflow-hidden">
+						<DiscordEmbedImage {...images[0]} />
+					</div>
+					<div className="flex flex-col overflow-hidden">
+						{/** biome-ignore lint/style/noNonNullAssertion: Images [1] exists here via the switch case */}
+						<DiscordEmbedImage {...images[1]!} />
+					</div>
+				</>
+			);
+		case 3:
+			return (
+				<>
+					<div className="flex flex-col overflow-hidden">
+						<DiscordEmbedImage {...images[0]} />
+						{/** biome-ignore lint/style/noNonNullAssertion: Images [2] exists here via the switch case */}
+						<DiscordEmbedImage {...images[2]!} className={cn("mt-[4px]", images[2]!.className)} />
+					</div>
+					<div className="flex flex-col overflow-hidden">
+						{/** biome-ignore lint/style/noNonNullAssertion: Images [1] exists here via the switch case */}
+						<DiscordEmbedImage {...images[1]!} />
+					</div>
+				</>
+			);
+		case 4:
+			return (
+				<>
+					<div className="flex flex-col overflow-hidden">
+						<DiscordEmbedImage {...images[0]} />
+						{/** biome-ignore lint/style/noNonNullAssertion: Images [2] exists here via the switch case */}
+						<DiscordEmbedImage {...images[2]!} className={cn("mt-[4px]", images[2]!.className)} />
+					</div>
+					<div className="flex flex-col overflow-hidden">
+						{/** biome-ignore lint/style/noNonNullAssertion: Images [1] exists here via the switch case */}
+						<DiscordEmbedImage {...images[1]!} />
+						{/** biome-ignore lint/style/noNonNullAssertion: Images [3] exists here via the switch case */}
+						<DiscordEmbedImage {...images[3]!} className={cn("mt-[4px]", images[3]!.className)} />
+					</div>
+				</>
+			);
+		default:
+			return null;
+	}
+}
+
+function DiscordEmbedImage({
+	className,
+	children,
+	src,
+	alt,
+	...props
+}: DiscordEmbedImage) {
+	return (
+		// biome-ignore lint/performance/noImgElement: Keeping it basic
+		<img
+			alt={alt ?? "Embed Image"}
+			className={cn(className)}
+			data-slot="discord-embed-image"
+			src={src}
+			{...props}
+		/>
+	);
+}
+
 function DiscordEmbedFooter({
 	className,
 	children,
@@ -404,6 +519,8 @@ export {
 	DiscordEmbedDescription,
 	DiscordEmbedFieldWrapper,
 	DiscordEmbedFields,
+	DiscordEmbedImageWrapper,
+	DiscordEmbedImages,
 	DiscordEmbedFooter,
 	DiscordEmbedFooterImage,
 	DiscordEmbedFooterText
