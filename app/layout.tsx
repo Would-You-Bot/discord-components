@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import type React from "react";
 import "./globals.css";
+import { RootProvider } from "fumadocs-ui/provider";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import type { ReactNode } from "react";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -13,21 +14,42 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"]
 });
 
-export const metadata: Metadata = {
-	title: "Discord Components",
-	description:
-		"A collection of discord components for integrating discord UIs into your project."
+export const viewport: Viewport = {
+	themeColor: "#059af6",
+	maximumScale: 5,
+	minimumScale: 1,
+	initialScale: 1
 };
 
-export default function RootLayout({
-	children
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export const metadata: Metadata = {
+	metadataBase: new URL("https://discord-components.com"),
+	title: "Discord Components",
+	description:
+		"A collection of discord components for integrating discord UIs into your project.",
+	robots: "index, follow",
+	publisher: "Would You",
+	openGraph: {
+		title: "Discord Components",
+		description:
+			"A collection of discord components for integrating discord UIs into your project.",
+		type: "website",
+		url: "https://discord-components.com",
+		locale: "en_US"
+	},
+	twitter: {
+		title: "Discord Components",
+		description:
+			"A collection of discord components for integrating discord UIs into your project."
+	},
+	pinterest: { richPin: true }
+};
+
+export default function Layout({ children }: { children: ReactNode }) {
 	return (
 		<html
 			className="dark"
 			lang="en"
+			suppressHydrationWarning
 		>
 			<script
 				async
@@ -40,9 +62,9 @@ export default function RootLayout({
 				src="https://app.databuddy.cc/databuddy.js"
 			/>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
 			>
-				{children}
+				<RootProvider>{children}</RootProvider>
 			</body>
 		</html>
 	);

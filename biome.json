@@ -23,7 +23,8 @@
       "!**/.gitignore",
       "!**/.gitattributes",
       "!**/.npmrc",
-      "!**/.env*"
+      "!**/.env*",
+      ".source"
     ]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
