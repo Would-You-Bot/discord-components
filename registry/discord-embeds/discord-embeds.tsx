@@ -346,7 +346,6 @@ type DiscordEmbedImagesProps = React.ComponentProps<"div"> & {
 	];
 };
 
-//TODO - Improve this component
 function DiscordEmbedImages({
 	className,
 	children,
