@@ -48,7 +48,7 @@ function DiscordEmbed({
 							{/** biome-ignore lint/performance/noImgElement: Keeping it basic */}
 							<img
 								alt={thumbnailAlt}
-								className="h-[80px] w-[80px]"
+								className="h-[80px] w-[80px] rounded-[4px]"
 								src={thumbnail ?? "Embed thumbnail image"}
 							/>
 						</div>
@@ -429,7 +429,7 @@ function DiscordEmbedImage({
 		// biome-ignore lint/performance/noImgElement: Keeping it basic
 		<img
 			alt={alt ?? "Embed Image"}
-			className={cn("h-full w-full object-cover", className)}
+			className={cn("h-full w-full object-cover rounded-[4px]", className)}
 			data-slot="discord-embed-image"
 			src={src}
 			{...props}
