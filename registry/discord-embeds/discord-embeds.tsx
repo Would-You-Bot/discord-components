@@ -42,7 +42,7 @@ function DiscordEmbed({
 			{...props}
 		>
 			{thumbnail && (
-				<div className="col-[2/2] row-[1/8] mt-[8px] ml-[16px] justify-self-end object-fill">
+				<div className="col-[2/2] row-[1/8] mt-[8px] ml-[16px] hidden justify-self-end object-fill sm:block">
 					<div className="flex h-full w-full flex-row flex-nowrap">
 						<div className="relative block rounded-[3px]">
 							{/** biome-ignore lint/performance/noImgElement: Keeping it basic */}
@@ -208,7 +208,10 @@ function DiscordEmbedFieldWrapper({
 }: React.ComponentProps<"div">) {
 	return (
 		<div
-			className={cn("col-[1/1] mt-[8px] grid gap-[8px]", className)}
+			className={cn(
+				"col-[1/1] mt-[8px] flex flex-col gap-[8px] sm:grid",
+				className
+			)}
 			data-slot="discord-embed-field-wrapper"
 			{...props}
 		>
