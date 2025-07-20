@@ -1,12 +1,12 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
-import { formatDate } from "./lib/date-fns";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { cn } from "@/lib/utils";
 import Icons from "./discord-icons";
+import { formatDate } from "./lib/date-fns";
 
 const chatVariants = cva(
-	"flex flex-col rounded-md bg-discord-background py-4",
+	"flex flex-col rounded-md bg-discord-background py-4 text-discord-foreground",
 	{
 		variants: {
 			theme: {
@@ -18,7 +18,7 @@ const chatVariants = cva(
 			}
 		},
 		defaultVariants: {
-			theme: "ash"
+			theme: "dark"
 		}
 	}
 );
@@ -31,8 +31,8 @@ function DiscordChat({
 }: React.ComponentProps<"div"> & VariantProps<typeof chatVariants>) {
 	return (
 		<div
-			data-slot="discord-messages"
 			className={cn(chatVariants({ theme, className }))}
+			data-slot="discord-messages"
 			{...props}
 		>
 			{children}
@@ -47,8 +47,8 @@ function DiscordMessageGroup({
 }: React.ComponentProps<"div">) {
 	return (
 		<div
-			data-slot="discord-message-group"
 			className={cn("mt-4 flex flex-col", className)}
+			data-slot="discord-message-group"
 			{...props}
 		>
 			{children}
@@ -63,8 +63,8 @@ function DiscordMessageContent({
 }: React.ComponentProps<"div">) {
 	return (
 		<div
-			data-slot="discord-message-content"
 			className={cn("relative px-4 pb-1 pl-14 hover:bg-black/10", className)}
+			data-slot="discord-message-content"
 			{...props}
 		>
 			{children}
@@ -92,15 +92,15 @@ function DiscordMessageAuthorImage({
 }) {
 	return (
 		<Avatar
-			data-slot="discord-message-author"
 			className="absolute top-1 left-2 size-10"
+			data-slot="discord-message-author"
 			{...props}
 		>
 			<AvatarImage
-				data-slot="discord-message-author-image"
-				className={cn("rounded-full", className)}
-				src={src}
 				alt={alt}
+				className={cn("rounded-full", className)}
+				data-slot="discord-message-author-image"
+				src={src}
 			/>
 			<AvatarFallback data-slot="discord-message-author-fallback">
 				{fallback}
@@ -119,15 +119,15 @@ function DiscordMessageAuthorName({
 	return (
 		<div className="flex flex-wrap items-center sm:flex-nowrap">
 			<p
-				data-slot="discord-message-author-name"
 				className={cn("mr-1 font-medium text-[1rem]", className)}
+				data-slot="discord-message-author-name"
 				{...props}
 			>
 				{children}
 			</p>
 			<p
+				className="text-[0.75rem] text-discord-foreground/50"
 				data-slot="discord-message-timestamp"
-				className="text-[0.75rem] text-muted-foreground"
 			>
 				{formatDate(timestamp, hr24)}
 			</p>
@@ -142,8 +142,8 @@ function DiscordMessage({
 }: React.ComponentProps<"div">) {
 	return (
 		<div
-			data-slot="discord-message"
 			className={cn("text-sm", className)}
+			data-slot="discord-message"
 			{...props}
 		>
 			{children}
@@ -276,7 +276,7 @@ type DiscordMentionProps =
 	| ExternalServerLinkProps
 	| ExternalServerLinkMessageProps;
 
-// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: fine
 function DiscordMention({
 	type,
 	modifier,
@@ -291,12 +291,12 @@ function DiscordMention({
 }: DiscordMentionProps) {
 	return (
 		<span
-			data-slot="discord-mention"
 			className={cn(
 				"my-[2px] inline-block cursor-pointer rounded-[3px] bg-discord-mention px-[2px] align-baseline font-medium text-discord-mention-foreground hover:bg-discord-mention-hover hover:text-discord-mention-foreground-hover",
 				roleColor && "discord-mention",
 				className
 			)}
+			data-slot="discord-mention"
 			style={
 				{
 					"--role-color": roleColor ? roleColor : undefined,
@@ -356,8 +356,8 @@ function DiscordMention({
 				<>
 					<Avatar className="mr-[3px] mb-[.2rem] inline-block size-[1em] bg-discord-background align-middle">
 						<AvatarImage
-							src={serverSrc}
 							alt={serverAlt}
+							src={serverSrc}
 						/>
 						<AvatarFallback>{serverFallback}</AvatarFallback>
 					</Avatar>

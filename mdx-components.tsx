@@ -1,11 +1,12 @@
+import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 import {
 	ImageZoom,
 	type ImageZoomProps
 } from "fumadocs-ui/components/image-zoom";
-import defaultMdxComponents from "fumadocs-ui/mdx";
+// biome-ignore lint/performance/noNamespaceImport: Required for docs
 import * as TabsComponents from "fumadocs-ui/components/tabs";
+import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
-import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
 	return {

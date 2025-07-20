@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.1.1/schema.json",
   "extends": ["ultracite"],
   "vcs": {
     "enabled": false,
@@ -8,36 +8,36 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": [
-      "node_modules",
-      "dist",
-      "build",
-      "coverage",
-      ".next",
-      ".github",
-      ".vscode",
-      ".idea",
-      ".DS_Store",
-      ".git",
-      ".gitignore",
-      ".gitattributes",
-      ".npmrc",
-      ".env*",
-      ".source"
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/build",
+      "!**/coverage",
+      "!**/.next",
+      "!**/.github",
+      "!**/.vscode",
+      "!**/.idea",
+      "!**/.DS_Store",
+      "!**/.git",
+      "!**/.gitignore",
+      "!**/.gitattributes",
+      "!**/.npmrc",
+      "!**/.env*",
+      "!**/.source"
     ]
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "style": {
-        "useBlockStatements": "info"
+        "useBlockStatements": "info",
+        "noEnum": "off"
       },
       "nursery": {
-        "noEnum": "off"
+        "noUnknownAtRule": "off"
       }
     }
   },

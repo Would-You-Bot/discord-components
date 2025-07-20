@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "Discord Components",
+  "homepage": "https://discord-components.com",
   "items": [
     {
       "name": "discord-base",
@@ -9,7 +9,7 @@
       "title": "Discord Base",
       "description": "The base components for all Discord components",
       "registryDependencies": ["avatar"],
-      "dependencies": ["class-variance-authority"],
+      "dependencies": ["class-variance-authority", "react"],
       "files": [
         {
           "path": "registry/discord-base/discord-base.tsx",
@@ -26,7 +26,10 @@
       ],
       "cssVars": {
         "light": {
+          "discord-foreground": "oklch(0.9065 0.0029 264.54)",
           "discord-background": "oklch(0.32 0.0107 278.25)",
+          "discord-header": "oklch(0.9897 0.0042 271.37)",
+          "discord-link": "oklch(0.6096 0.1616 255.17)",
           "discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
           "discord-mention-foreground": "oklch(0.88 0.0574 270.02)",
           "discord-mention-hover": "oklch(0.58 0.2093 273.55)",
@@ -36,7 +39,10 @@
       "css": {
         "@layer base": {
           ".discord-light": {
+            "--discord-foreground": "oklch(0.322 0.0089 276.86)",
             "--discord-background": "oklch(0.99 0 0)",
+            "--discord-header": "oklch(0.1914 0.0089 276.86)",
+
             "--discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
             "--discord-mention-foreground": "oklch(0.88 0.0574 270.02)"
           },
@@ -59,6 +65,54 @@
             "--discord-background": "oklch(0.13 0.005 285.67)",
             "--discord-mention": "oklch(0.58 0.2091 273.85 / 23.92%)",
             "--discord-mention-foreground": "oklch(0.39 0.1288 271.41)"
+          },
+          ".discord-mention": {
+            "background-color": "color-mix(in srgb, var(--role-color) 10%, transparent);"
+          },
+
+          ".discord-mention:hover": {
+            "background-color": "color-mix(in srgb, var(--role-color) 30%, transparent);"
+          }
+        }
+      }
+    },
+    {
+      "name": "discord-embed",
+      "type": "registry:component",
+      "title": "Discord Embeds",
+      "description": "The component for creating Discord embeds",
+      "registryDependencies": [
+        "avatar",
+        "https://discord-components.com/r/discord-base.json"
+      ],
+      "dependencies": ["class-variance-authority", "react"],
+      "files": [
+        {
+          "path": "registry/discord-embeds/discord-embeds.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "discord-embed-background": "oklch(0.2624 0.0093 285.74)"
+        }
+      },
+      "css": {
+        "@layer base": {
+          ".discord-light": {
+            "--discord-embed-background": "oklch(1 0 0)"
+          },
+          ".discord-classic": {
+            "--discord-embed-background": "oklch(0.145 0 0)"
+          },
+          ".discord-ash": {
+            "--discord-embed-background": "oklch(0.3502 0.0122 279.28)"
+          },
+          ".discord-dark": {
+            "--discord-embed-background": "oklch(0.2624 0.0093 285.74)"
+          },
+          ".discord-onyx": {
+            "--discord-embed-background": "oklch(0.191 0.0043 264.47)"
           }
         }
       }

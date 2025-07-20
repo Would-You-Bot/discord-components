@@ -1,8 +1,8 @@
 import "./globals.css";
 import { RootProvider } from "fumadocs-ui/provider";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
-import type { Metadata, Viewport } from "next";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -47,19 +47,19 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: ReactNode }) {
 	return (
 		<html
-			lang="en"
 			className="dark"
+			lang="en"
 			suppressHydrationWarning
 		>
 			<script
-				src="https://app.databuddy.cc/databuddy.js"
+				async
+				crossOrigin="anonymous"
 				data-client-id="L0XUtcivbZecupTbFpPVn"
+				data-enable-batching="true"
+				data-track-errors="true"
 				data-track-hash-changes="true"
 				data-track-web-vitals="true"
-				data-track-errors="true"
-				data-enable-batching="true"
-				crossOrigin="anonymous"
-				async
+				src="https://app.databuddy.cc/databuddy.js"
 			/>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}

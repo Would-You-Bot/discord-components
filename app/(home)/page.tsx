@@ -1,3 +1,4 @@
+"use client";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import {
 	DiscordChat,
@@ -9,6 +10,21 @@ import {
 	DiscordMessageContent,
 	DiscordMessageGroup
 } from "@/registry/discord-base/discord-base";
+import {
+	DiscordEmbed,
+	DiscordEmbedAuthor,
+	DiscordEmbedAuthorImage,
+	DiscordEmbedAuthorName,
+	DiscordEmbedDescription,
+	DiscordEmbedFields,
+	DiscordEmbedFieldWrapper,
+	DiscordEmbedFooter,
+	DiscordEmbedFooterImage,
+	DiscordEmbedFooterText,
+	DiscordEmbedImages,
+	DiscordEmbedImageWrapper,
+	DiscordEmbedTitle
+} from "@/registry/discord-embeds/discord-embeds";
 
 export default function Home() {
 	return (
@@ -21,8 +37,8 @@ export default function Home() {
 							Example of basic discord messages
 						</h2>
 						<OpenInV0Button
-							name="hello-world"
 							className="w-fit"
+							name="hello-world"
 						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
@@ -31,9 +47,9 @@ export default function Home() {
 								<DiscordMessageContent>
 									<DiscordMessageAuthor>
 										<DiscordMessageAuthorImage
-											src="/images/avatars/Woofer.webp"
 											alt="Avatar"
 											fallback="WF"
+											src="/images/avatars/Woofer.webp"
 										/>
 										<DiscordMessageAuthorName
 											timestamp={new Date(Date.now() - 48 * 60 * 60 * 1000)}
@@ -53,9 +69,9 @@ export default function Home() {
 								<DiscordMessageContent>
 									<DiscordMessageAuthor>
 										<DiscordMessageAuthorImage
-											src="/images/avatars/Dominik.webp"
 											alt="Avatar"
 											fallback="DOM"
+											src="/images/avatars/Dominik.webp"
 										/>
 										<DiscordMessageAuthorName timestamp={new Date()}>
 											Dominik
@@ -69,9 +85,9 @@ export default function Home() {
 								<DiscordMessageContent>
 									<DiscordMessageAuthor>
 										<DiscordMessageAuthorImage
-											src="/images/avatars/Woofer.webp"
 											alt="Avatar"
 											fallback="WF"
+											src="/images/avatars/Woofer.webp"
 										/>
 										<DiscordMessageAuthorName
 											timestamp={new Date(Date.now() - 48 * 60 * 60 * 1000)}
@@ -97,8 +113,8 @@ export default function Home() {
 							Simple Mentions
 						</h2>
 						<OpenInV0Button
-							name="hello-world"
 							className="w-fit"
+							name="hello-world"
 						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
@@ -107,9 +123,9 @@ export default function Home() {
 								<DiscordMessageContent>
 									<DiscordMessageAuthor>
 										<DiscordMessageAuthorImage
-											src="/images/avatars/Woofer.webp"
 											alt="Avatar"
 											fallback="WF"
+											src="/images/avatars/Woofer.webp"
 										/>
 										<DiscordMessageAuthorName
 											timestamp={new Date(Date.now() - 48 * 60 * 60 * 1000)}
@@ -124,8 +140,8 @@ export default function Home() {
 										<DiscordMention type="role">Admin</DiscordMention> help!!!!
 										<br />
 										<DiscordMention
-											type="role"
 											roleColor="#C759FF"
+											type="role"
 										>
 											Owner
 										</DiscordMention>{" "}
@@ -185,8 +201,8 @@ export default function Home() {
 							In-Server Message Link Mentions
 						</h2>
 						<OpenInV0Button
-							name="hello-world"
 							className="w-fit"
+							name="hello-world"
 						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
@@ -195,9 +211,9 @@ export default function Home() {
 								<DiscordMessageContent>
 									<DiscordMessageAuthor>
 										<DiscordMessageAuthorImage
-											src="/images/avatars/Woofer.webp"
 											alt="Avatar"
 											fallback="WF"
+											src="/images/avatars/Woofer.webp"
 										/>
 										<DiscordMessageAuthorName
 											timestamp={new Date(Date.now() - 48 * 60 * 60 * 1000)}
@@ -208,45 +224,45 @@ export default function Home() {
 									<DiscordMessage>
 										Yo, check out this cool message{" "}
 										<DiscordMention
-											type="message-link"
 											modifier="channel"
 											modifierText="general"
+											type="message-link"
 										/>
 										<br />
 										Go rate my new car here{" "}
 										<DiscordMention
-											type="message-link"
 											modifier="thread"
 											modifierText="cool-cars"
+											type="message-link"
 										/>{" "}
 										please :{")"}
 										<br />
 										Can you please help me with this issue{" "}
 										<DiscordMention
-											type="message-link"
 											modifier="forum"
 											modifierText="help"
+											type="message-link"
 										/>{" "}
 										?
 										<br />
 										Check out my new PC background{" "}
 										<DiscordMention
-											type="message-link"
 											modifier="media"
 											modifierText="cool-backgrounds"
+											type="message-link"
 										/>
 										<br />
 										Did you see what bob wanted to tell you in the VC yesterday?{" "}
 										<DiscordMention
-											type="message-link"
 											modifier="voice"
 											modifierText="chit-chat"
+											type="message-link"
 										/>
 										<br />
 										Look at this new decoration, should I buy it?{" "}
 										<DiscordMention
-											type="shop-link"
 											modifierText="Aurora"
+											type="shop-link"
 										/>
 									</DiscordMessage>
 								</DiscordMessageContent>
@@ -261,8 +277,8 @@ export default function Home() {
 							External Server Message Link Mentions
 						</h2>
 						<OpenInV0Button
-							name="hello-world"
 							className="w-fit"
+							name="hello-world"
 						/>
 					</div>
 					<div className="relative flex min-h-[400px] items-center justify-center">
@@ -271,9 +287,9 @@ export default function Home() {
 								<DiscordMessageContent>
 									<DiscordMessageAuthor>
 										<DiscordMessageAuthorImage
-											src="/images/avatars/Woofer.webp"
 											alt="Avatar"
 											fallback="WF"
+											src="/images/avatars/Woofer.webp"
 										/>
 										<DiscordMessageAuthorName
 											timestamp={new Date(Date.now() - 48 * 60 * 60 * 1000)}
@@ -284,34 +300,34 @@ export default function Home() {
 									<DiscordMessage>
 										Yo, check out this channel{" "}
 										<DiscordMention
-											type="external-server-link"
 											modifier="channel"
 											modifierText="Would You"
-											serverSrc="/images/servers/WouldYou.webp"
 											serverAlt={"Server Icon"}
 											serverFallback="WY"
+											serverSrc="/images/servers/WouldYou.webp"
+											type="external-server-link"
 										>
 											general
 										</DiscordMention>
 										<br />
 										Check out this announcement message from Bob{" "}
 										<DiscordMention
-											type="external-server-link"
 											modifier="message"
 											modifierText="Would You"
-											serverSrc="/images/servers/WouldYou.webp"
 											serverAlt={"Server Icon"}
 											serverFallback="WY"
+											serverSrc="/images/servers/WouldYou.webp"
+											type="external-server-link"
 										/>
 										<br />
 										Join up{" "}
 										<DiscordMention
-											type="external-server-link"
 											modifier="voice"
 											modifierText="Would You"
-											serverSrc="/images/servers/WouldYou.webp"
 											serverAlt={"Server Icon"}
 											serverFallback="WY"
+											serverSrc="/images/servers/WouldYou.webp"
+											type="external-server-link"
 										>
 											gamin
 										</DiscordMention>{" "}
@@ -319,12 +335,12 @@ export default function Home() {
 										<br />
 										Did you see the posts people are making here{" "}
 										<DiscordMention
-											type="external-server-link"
 											modifier="forum"
 											modifierText="Would You"
-											serverSrc="/images/servers/WouldYou.webp"
 											serverAlt={"Server Icon"}
 											serverFallback="WY"
+											serverSrc="/images/servers/WouldYou.webp"
+											type="external-server-link"
 										>
 											help
 										</DiscordMention>{" "}
@@ -332,52 +348,203 @@ export default function Home() {
 										<br />
 										Look at what bob answered to this question{" "}
 										<DiscordMention
-											type="external-server-link"
 											modifier="forum-message"
 											modifierText="Would You"
-											serverSrc="/images/servers/WouldYou.webp"
 											serverAlt={"Server Icon"}
 											serverFallback="WY"
+											serverSrc="/images/servers/WouldYou.webp"
+											type="external-server-link"
 										>
 											cool-cars
 										</DiscordMention>
 										<br />
 										Check out this cool video{" "}
 										<DiscordMention
-											type="external-server-link"
 											modifier="media"
 											modifierText="Would You"
-											serverSrc="/images/servers/WouldYou.webp"
 											serverAlt={"Server Icon"}
 											serverFallback="WY"
+											serverSrc="/images/servers/WouldYou.webp"
+											type="external-server-link"
 										>
 											cool-backgrounds
 										</DiscordMention>
 										<br />
 										Quick, join up, the stage is starting soon{" "}
 										<DiscordMention
-											type="external-server-link"
 											modifier="stage"
 											modifierText="Would You"
-											serverSrc="/images/servers/WouldYou.webp"
 											serverAlt={"Server Icon"}
 											serverFallback="WY"
+											serverSrc="/images/servers/WouldYou.webp"
+											type="external-server-link"
 										>
 											Events
 										</DiscordMention>
 										<br />
 										They lock{" "}
 										<DiscordMention
-											type="external-server-link"
 											modifier="locked"
 											modifierText="Would You"
-											serverSrc="/images/servers/WouldYou.webp"
 											serverAlt={"Server Icon"}
 											serverFallback="WY"
+											serverSrc="/images/servers/WouldYou.webp"
+											type="external-server-link"
 										>
 											events
 										</DiscordMention>{" "}
 										when no events are going on :{"{"}
+									</DiscordMessage>
+								</DiscordMessageContent>
+							</DiscordMessageGroup>
+						</DiscordChat>
+					</div>
+				</div>
+
+				<div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
+					<div className="flex items-center justify-between">
+						<h2 className="text-muted-foreground text-sm sm:pl-3">An Embed</h2>
+						<OpenInV0Button
+							className="w-fit"
+							name="hello-world"
+						/>
+					</div>
+					<div className="relative flex min-h-[400px] w-full items-center justify-center">
+						<DiscordChat className="w-full">
+							<DiscordMessageGroup>
+								<DiscordMessageContent>
+									<DiscordMessageAuthor>
+										<DiscordMessageAuthorImage
+											alt="Avatar"
+											fallback="WF"
+											src="/images/avatars/Woofer.webp"
+										/>
+										<DiscordMessageAuthorName
+											timestamp={new Date(Date.now() - 48 * 60 * 60 * 1000)}
+										>
+											Woofer21
+										</DiscordMessageAuthorName>
+									</DiscordMessageAuthor>
+									<DiscordMessage>
+										<DiscordEmbed>
+											<DiscordEmbedAuthor>
+												<DiscordEmbedAuthorName>
+													Woofer21
+												</DiscordEmbedAuthorName>
+											</DiscordEmbedAuthor>
+											<DiscordEmbedTitle
+												href="#"
+												isLink
+											>
+												This is a title with a link for embeds!
+											</DiscordEmbedTitle>
+											<DiscordEmbedDescription>
+												This is the embed description!!
+											</DiscordEmbedDescription>
+											<DiscordEmbedFooter>
+												<DiscordEmbedFooterText date={new Date()}>
+													Cool Footer for Me
+												</DiscordEmbedFooterText>
+											</DiscordEmbedFooter>
+										</DiscordEmbed>
+									</DiscordMessage>
+								</DiscordMessageContent>
+
+								<DiscordMessageContent>
+									<DiscordMessageAuthor>
+										<DiscordMessageAuthorImage
+											alt="Avatar"
+											fallback="WF"
+											src="/images/avatars/Woofer.webp"
+										/>
+										<DiscordMessageAuthorName
+											timestamp={new Date(Date.now() - 48 * 60 * 60 * 1000)}
+										>
+											Woofer21
+										</DiscordMessageAuthorName>
+									</DiscordMessageAuthor>
+									<DiscordMessage>
+										<DiscordEmbed thumbnail="/images/avatars/Woofer.webp">
+											<DiscordEmbedAuthor>
+												<DiscordEmbedAuthorImage
+													alt="Avatar"
+													fallback="WF"
+													src="/images/avatars/Woofer.webp"
+												/>
+												<DiscordEmbedAuthorName
+													href="#"
+													isLink
+												>
+													Woofer21
+												</DiscordEmbedAuthorName>
+											</DiscordEmbedAuthor>
+											<DiscordEmbedTitle>
+												This is a normal title for embeds!
+											</DiscordEmbedTitle>
+											<DiscordEmbedDescription>
+												This is the embed description!!
+											</DiscordEmbedDescription>
+											<DiscordEmbedFieldWrapper>
+												<DiscordEmbedFields
+													fields={[
+														{
+															name: "Field 1",
+															value: "This is the value of field 1",
+															inline: true
+														},
+														{
+															name: "Field 2",
+															value: "This is the value of field 2",
+															inline: true
+														},
+														{
+															name: "Field 3",
+															value: "This is the value of field 3"
+														},
+														{
+															name: "Field 4",
+															value: "This is the value of field 4"
+														},
+														{
+															name: "Field 5",
+															value: "This is the value of field 5"
+														}
+													]}
+												/>
+											</DiscordEmbedFieldWrapper>
+											<DiscordEmbedImageWrapper>
+												<DiscordEmbedImages
+													images={[
+														{
+															src: "/images/avatars/Woofer.webp",
+															alt: "Avatar",
+															onClick: () => {
+																alert("You clicked on the image!");
+															},
+															className: "cursor-pointer"
+														},
+														{
+															src: "/images/avatars/Woofer.webp",
+															alt: "Avatar"
+														},
+														{
+															src: "/images/avatars/Woofer.webp",
+															alt: "Avatar"
+														}
+													]}
+												/>
+											</DiscordEmbedImageWrapper>
+											<DiscordEmbedFooter>
+												<DiscordEmbedFooterImage
+													alt="Avatar"
+													fallback="WF"
+													src="/images/avatars/Woofer.webp"
+												/>
+												<DiscordEmbedFooterText date={new Date()}>
+													Cool Footer for Me
+												</DiscordEmbedFooterText>
+											</DiscordEmbedFooter>
+										</DiscordEmbed>
 									</DiscordMessage>
 								</DiscordMessageContent>
 							</DiscordMessageGroup>
@@ -392,8 +559,8 @@ export default function Home() {
 						<a
 							className="text-foreground/80 hover:underline"
 							href="https://woofer21.com/"
-							target="_blank"
 							rel="noreferrer"
+							target="_blank"
 						>
 							<span>Woofer21</span>
 						</a>{" "}
@@ -401,8 +568,8 @@ export default function Home() {
 						<a
 							className="text-foreground/80 hover:underline"
 							href="https://github.com/Would-You-Bot/discord-components/graphs/contributors"
-							target="_blank"
 							rel="noreferrer"
+							target="_blank"
 						>
 							Contributors
 						</a>
@@ -410,9 +577,9 @@ export default function Home() {
 					</p>
 					<a
 						className="text-foreground/80 hover:underline"
-						target="_blank"
-						rel="noreferrer"
 						href="https://wouldyoubot.gg/legal"
+						rel="noreferrer"
+						target="_blank"
 					>
 						Legal Notice
 					</a>
