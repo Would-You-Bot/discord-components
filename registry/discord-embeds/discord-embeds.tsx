@@ -47,9 +47,9 @@ function DiscordEmbed({
 						<div className="relative block rounded-[3px]">
 							{/** biome-ignore lint/performance/noImgElement: Keeping it basic */}
 							<img
-								alt={thumbnailAlt}
+								alt={thumbnailAlt ?? "Embed thumbnail image"}
 								className="h-[80px] w-[80px] rounded-[4px]"
-								src={thumbnail ?? "Embed thumbnail image"}
+								src={thumbnail}
 							/>
 						</div>
 					</div>
@@ -170,7 +170,7 @@ function DiscordEmbedTitle({
 				</a>
 			) : (
 				<p
-					className={cn("", className)}
+					className={cn(className)}
 					data-slot="discord-embed-title"
 					style={{ wordBreak: "break-word" }}
 					{...(props as React.ComponentPropsWithoutRef<"p">)}
@@ -208,7 +208,7 @@ function DiscordEmbedFieldWrapper({
 }: React.ComponentProps<"div">) {
 	return (
 		<div
-			className={cn("cols-[1/1] mt-[8px] grid gap-[8px]", className)}
+			className={cn("col-[1/1] mt-[8px] grid gap-[8px]", className)}
 			data-slot="discord-embed-field-wrapper"
 			{...props}
 		>
