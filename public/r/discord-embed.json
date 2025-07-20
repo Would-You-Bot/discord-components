@@ -4,10 +4,7 @@
   "type": "registry:component",
   "title": "Discord Embeds",
   "description": "The component for creating Discord embeds",
-  "dependencies": [
-    "class-variance-authority",
-    "react"
-  ],
+  "dependencies": ["class-variance-authority", "react"],
   "registryDependencies": [
     "avatar",
     "https://discord-components.com/r/discord-base.json"
