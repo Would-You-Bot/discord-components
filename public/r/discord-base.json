@@ -4,8 +4,13 @@
   "type": "registry:component",
   "title": "Discord Base",
   "description": "The base components for all Discord components",
-  "dependencies": ["class-variance-authority", "react"],
-  "registryDependencies": ["avatar"],
+  "dependencies": [
+    "class-variance-authority",
+    "react"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
   "files": [
     {
       "path": "registry/discord-base/discord-base.tsx",
