@@ -429,7 +429,7 @@ function DiscordEmbedImage({
 		// biome-ignore lint/performance/noImgElement: Keeping it basic
 		<img
 			alt={alt ?? "Embed Image"}
-			className={cn("h-full w-full object-cover rounded-[4px]", className)}
+			className={cn("h-full w-full rounded-[4px] object-cover", className)}
 			data-slot="discord-embed-image"
 			src={src}
 			{...props}
